@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Vim
+*.swp
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
