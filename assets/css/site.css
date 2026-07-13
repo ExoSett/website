@@ -8,6 +8,33 @@
   --colour-rule: #dddddd;
 }
 
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/assets/fonts/ibm-plex-sans/IBMPlexSans-Regular.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/assets/fonts/ibm-plex-sans/IBMPlexSans-Medium.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/assets/fonts/ibm-plex-sans/IBMPlexSans-SemiBold.woff2")
+    format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
