@@ -19,6 +19,10 @@ The site is intentionally simple:
 - CSS
 - Hosted using GitHub Pages
 
+## Brand assets
+
+Logo source files, production SVGs, favicon assets and usage guidance are in [`assets/brand/`](assets/brand/).
+
 ## Copyright
 
 Copyright © 2026 ExoSett. All rights reserved.
