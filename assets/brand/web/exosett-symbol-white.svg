@@ -7,10 +7,6 @@
    aria-labelledby="title desc"
    version="1.1"
    id="svg7"
-   sodipodi:docname="exosett-symbol-master.svg"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -18,25 +14,6 @@
    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs7" />
-  <sodipodi:namedview
-     id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="3.6666667"
-     inkscape:cx="111.27273"
-     inkscape:cy="120.40909"
-     inkscape:window-width="1927"
-     inkscape:window-height="1167"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg7"
-     showgrid="false" />
   <title
      id="title">ExoSett frame-cell symbol</title>
   <desc
@@ -44,7 +21,7 @@
   <!-- Transparent background; artwork uses currentColor for easy recolouring. -->
   <path
      id="rect1"
-     style="fill:#000000"
+     style="fill:#ffffff;fill-opacity:1"
      d="M 64 36 L 64 58.501953 A 13 13 0 0 0 58.501953 64 L 36 64 L 36 76 L 58.501953 76 A 13 13 0 0 0 64 81.498047 L 64 158.50195 A 13 13 0 0 0 58.501953 164 L 36 164 L 36 176 L 58.501953 176 A 13 13 0 0 0 64 181.49805 L 64 204 L 76 204 L 76 181.49805 A 13 13 0 0 0 81.498047 176 L 158.50195 176 A 13 13 0 0 0 164 181.49805 L 164 204 L 176 204 L 176 181.49805 A 13 13 0 0 0 181.49805 176 L 204 176 L 204 164 L 181.5293 164 A 13 13 0 0 0 176 158.4707 L 176 81.498047 A 13 13 0 0 0 181.49805 76 L 204 76 L 204 64 L 181.5293 64 A 13 13 0 0 0 176 58.470703 L 176 36 L 164 36 L 164 58.501953 A 13 13 0 0 0 158.50195 64 L 81.529297 64 A 13 13 0 0 0 76 58.470703 L 76 36 L 64 36 z M 70 61.5 A 8.5 8.5 0 0 1 78.5 70 A 8.5 8.5 0 0 1 70 78.5 A 8.5 8.5 0 0 1 61.5 70 A 8.5 8.5 0 0 1 70 61.5 z M 170 61.5 A 8.5 8.5 0 0 1 178.5 70 A 8.5 8.5 0 0 1 170 78.5 A 8.5 8.5 0 0 1 161.5 70 A 8.5 8.5 0 0 1 170 61.5 z M 81.498047 76 L 158.50195 76 A 13 13 0 0 0 164 81.498047 L 164 158.50195 A 13 13 0 0 0 158.50195 164 L 81.529297 164 A 13 13 0 0 0 76 158.4707 L 76 81.498047 A 13 13 0 0 0 81.498047 76 z M 70 161.5 A 8.5 8.5 0 0 1 78.5 170 A 8.5 8.5 0 0 1 70 178.5 A 8.5 8.5 0 0 1 61.5 170 A 8.5 8.5 0 0 1 70 161.5 z M 170 161.5 A 8.5 8.5 0 0 1 178.5 170 A 8.5 8.5 0 0 1 170 178.5 A 8.5 8.5 0 0 1 161.5 170 A 8.5 8.5 0 0 1 170 161.5 z " />
   <metadata
      id="metadata8">
