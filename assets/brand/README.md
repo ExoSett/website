@@ -38,9 +38,9 @@ The editable horizontal logo containing the ExoSett symbol and wordmark.
 
 The wordmark uses:
 
-* IBM Plex Sans
-* Medium weight
-* the spelling `ExoSett`
+- IBM Plex Sans
+- Medium weight
+- the spelling `ExoSett`
 
 The wordmark should remain as editable text in the master file.
 
@@ -50,11 +50,11 @@ Files in `web/` are intended for use on the website and in other published mater
 
 Production SVG files should:
 
-* be saved as Plain SVG;
-* contain no unnecessary Inkscape metadata;
-* use transparent backgrounds;
-* preserve the original proportions;
-* contain the wordmark as vector paths rather than live text.
+- be saved as Plain SVG;
+- contain no unnecessary Inkscape metadata;
+- use transparent backgrounds;
+- preserve the original proportions;
+- contain the wordmark as vector paths rather than live text.
 
 Converting the wordmark to paths ensures that the logo renders consistently even where IBM Plex Sans is not installed.
 
@@ -70,17 +70,17 @@ The primary logo is the horizontal arrangement:
 
 The standalone symbol may be used where the full logo would be too large or unnecessary, including:
 
-* favicons;
-* social-media icons;
-* small interface elements;
-* engineering drawing marks;
-* watermarks;
-* animation identifiers.
+- favicons;
+- social-media icons;
+- small interface elements;
+- engineering drawing marks;
+- watermarks;
+- animation identifiers.
 
 The approved base identity is monochrome:
 
-* black artwork on a white or light background;
-* white artwork on a black or dark background.
+- black artwork on a white or light background;
+- white artwork on a black or dark background.
 
 Colour versions may be developed later, but the monochrome logo remains the reference design.
 
@@ -104,16 +104,16 @@ The horizontal logo should not be used so small that the `ExoSett` wordmark beco
 
 Do not:
 
-* stretch or squash the logo;
-* change its proportions;
-* rotate it;
-* rearrange the symbol and wordmark;
-* alter the spacing between them without updating the master;
-* substitute another typeface;
-* add shadows, outlines, gradients or other effects;
-* place the black logo on a dark background;
-* place the white logo on a light background;
-* add a coloured or white rectangle behind the symbol unless it is part of the intended layout.
+- stretch or squash the logo;
+- change its proportions;
+- rotate it;
+- rearrange the symbol and wordmark;
+- alter the spacing between them without updating the master;
+- substitute another typeface;
+- add shadows, outlines, gradients or other effects;
+- place the black logo on a dark background;
+- place the white logo on a light background;
+- add a coloured or white rectangle behind the symbol unless it is part of the intended layout.
 
 ## Website use
 
@@ -122,10 +122,7 @@ Use the production SVG files from `web/`.
 Example:
 
 ```html
-<img
-  src="/assets/brand/web/exosett-logo-horizontal.svg"
-  alt="ExoSett"
->
+<img src="/assets/brand/web/exosett-logo-horizontal.svg" alt="ExoSett" />
 ```
 
 The image width may be set in HTML or CSS while allowing the height to adjust automatically:
@@ -141,9 +138,9 @@ The image width may be set in HTML or CSS while allowing the height to adjust au
 
 The root-level `favicon.ico` contains:
 
-* 16 × 16 pixels;
-* 32 × 32 pixels;
-* 48 × 48 pixels.
+- 16 × 16 pixels;
+- 32 × 32 pixels;
+- 48 × 48 pixels.
 
 It was generated from PNG exports of the ExoSett symbol.
 
@@ -166,4 +163,3 @@ When changing the logo:
 5. Check the result in a browser.
 6. Test the symbol at small sizes.
 7. Commit both the updated master and production assets.
-
