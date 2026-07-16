@@ -8,6 +8,7 @@ This directory contains the source and production files for the ExoSett symbol, 
 brand/
 ├── README.md
 ├── source/
+│   ├── exosett-favicon-master.svg
 │   ├── exosett-symbol-master.svg
 │   └── exosett-logo-horizontal-master.svg
 ├── web/
@@ -136,13 +137,15 @@ The image width may be set in HTML or CSS while allowing the height to adjust au
 
 ## Favicon
 
+The main ExoSett symbol remains transparent. The favicon uses a dedicated opaque white tile behind the black symbol to ensure reliable contrast on both light and dark browser tabs.
+
 The root-level `favicon.ico` contains:
 
 - 16 × 16 pixels;
 - 32 × 32 pixels;
 - 48 × 48 pixels.
 
-It was generated from PNG exports of the ExoSett symbol.
+It was generated from PNG exports of `source/exosett-favicon-master.svg`.
 
 The ICO contents can be checked using ImageMagick:
 
