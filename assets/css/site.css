@@ -215,6 +215,10 @@ a {
   line-height: 1.65;
 }
 
+.intro__prose {
+  margin-top: 24px;
+}
+
 .site-section {
   padding: var(--section-padding) 0;
   border-top: 1px solid var(--colour-rule);
