@@ -314,6 +314,21 @@ a {
   margin-top: 20px;
 }
 
+.related-links {
+  max-width: var(--text-width);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  list-style: none;
+}
+
+.related-links a {
+  font-weight: var(--font-weight-medium);
+  text-underline-offset: 0.25em;
+}
+
 .site-footer {
   color: var(--colour-background);
   background: var(--colour-text);
