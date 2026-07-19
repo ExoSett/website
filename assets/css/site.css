@@ -152,6 +152,7 @@ a {
 }
 
 .site-nav a {
+  padding: 3px 0;
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-medium);
   line-height: 1.2;
@@ -258,19 +259,19 @@ a {
   border: 1px solid var(--colour-rule-strong);
 }
 
-.feature-card h3 {
+.feature-card :is(h2, h3) {
   margin: 0 0 16px;
   font-size: var(--font-size-card-heading);
   font-weight: var(--font-weight-medium);
   line-height: 1.2;
 }
 
-.feature-card h3 a {
+.feature-card :is(h2, h3) a {
   text-decoration: none;
 }
 
-.feature-card h3 a:hover,
-.feature-card h3 a:focus-visible {
+.feature-card :is(h2, h3) a:hover,
+.feature-card :is(h2, h3) a:focus-visible {
   text-decoration: underline;
   text-underline-offset: 0.25em;
 }
