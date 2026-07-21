@@ -88,6 +88,44 @@
         </p>
       </section>
 
+      <figure class="component-media" aria-labelledby="service-frame-media-caption">
+        <video
+          class="component-media__video"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="metadata"
+          poster="/assets/media/components/service-frame/poster.webp"
+          width="640"
+          height="360"
+          aria-describedby="service-frame-media-caption"
+        >
+          <source
+            src="/assets/media/components/service-frame/animation.webm"
+            type="video/webm"
+          />
+          <source
+            src="/assets/media/components/service-frame/animation.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support embedded video. The illustration shows
+          the service frame providing access and utility infrastructure beside
+          the accommodation frame.
+        </video>
+        <img
+          class="component-media__poster"
+          src="/assets/media/components/service-frame/poster.webp"
+          width="640"
+          height="360"
+          alt="Service frame alongside the accommodation frame"
+        />
+        <figcaption id="service-frame-media-caption">
+          The service frame provides continuing access and utility routes for
+          the accommodation it serves.
+        </figcaption>
+      </figure>
+
       <section class="site-section" aria-labelledby="access-heading">
         <div class="site-section__header">
           <h2 id="access-heading">Access and circulation</h2>
@@ -194,5 +232,6 @@
         </div>
       </div>
     </footer>
+    <script src="/assets/js/component-media.js"></script>
   </body>
 </html>

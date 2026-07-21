@@ -23,6 +23,13 @@ The site is intentionally simple:
 
 Logo source files, production SVGs, favicon assets and usage guidance are in [`assets/brand/`](assets/brand/).
 
+## Component media
+
+Review animations for component pages are stored by component in
+`assets/media/components/<component-name>/`. Each set uses `animation.webm`,
+`animation.mp4` and `poster.webp`; pages list WebM first and use the poster as a
+static alternative when reduced motion is requested.
+
 ## Copyright
 
 Copyright © 2026 ExoSett. All rights reserved.

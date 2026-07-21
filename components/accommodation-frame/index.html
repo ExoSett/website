@@ -82,6 +82,44 @@
         </p>
       </section>
 
+      <figure class="component-media" aria-labelledby="accommodation-frame-media-caption">
+        <video
+          class="component-media__video"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="metadata"
+          poster="/assets/media/components/accommodation-frame/poster.webp"
+          width="640"
+          height="360"
+          aria-describedby="accommodation-frame-media-caption"
+        >
+          <source
+            src="/assets/media/components/accommodation-frame/animation.webm"
+            type="video/webm"
+          />
+          <source
+            src="/assets/media/components/accommodation-frame/animation.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support embedded video. The illustration shows
+          accommodation modules being independently inserted into and removed
+          from the structural frame.
+        </video>
+        <img
+          class="component-media__poster"
+          src="/assets/media/components/accommodation-frame/poster.webp"
+          width="640"
+          height="360"
+          alt="Accommodation modules positioned within the structural frame"
+        />
+        <figcaption id="accommodation-frame-media-caption">
+          Accommodation modules can be inserted, supported and removed
+          independently within the frame.
+        </figcaption>
+      </figure>
+
       <section class="site-section" aria-labelledby="how-it-works-heading">
         <div class="site-section__header">
           <h2 id="how-it-works-heading">How it works</h2>
@@ -147,5 +185,6 @@
         </div>
       </div>
     </footer>
+    <script src="/assets/js/component-media.js"></script>
   </body>
 </html>
