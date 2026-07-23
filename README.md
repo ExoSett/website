@@ -19,6 +19,14 @@ The site is intentionally simple:
 - CSS
 - Hosted using GitHub Pages
 
+## Validation
+
+Validate the JSON-LD structured data with:
+
+```sh
+python3 scripts/validate_structured_data.py
+```
+
 ## Brand assets
 
 Logo source files, production SVGs, favicon assets and usage guidance are in [`assets/brand/`](assets/brand/).
