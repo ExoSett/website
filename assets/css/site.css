@@ -233,6 +233,13 @@ a {
   background: var(--colour-background-subtle);
 }
 
+.component-media__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--colour-background-subtle);
+}
+
 .component-media__poster {
   display: none;
   object-fit: cover;
@@ -327,6 +334,10 @@ a {
 
 .prose p + p {
   margin-top: 20px;
+}
+
+.prose .component-media {
+  margin: 32px 0;
 }
 
 .related-links {
