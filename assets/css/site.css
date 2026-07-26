@@ -182,6 +182,10 @@ a {
   padding: var(--section-padding) 0;
 }
 
+.intro--home {
+  max-width: none;
+}
+
 .intro__eyebrow,
 .site-section__eyebrow {
   font-weight: var(--font-weight-medium);
@@ -218,6 +222,13 @@ a {
 
 .intro__prose {
   margin-top: 24px;
+}
+
+.home-system-image {
+  width: 60%;
+  max-width: 100%;
+  height: auto;
+  margin-top: 48px;
 }
 
 .component-media {
@@ -423,6 +434,10 @@ a {
 
   .component-media {
     margin-bottom: var(--section-padding-mobile);
+  }
+
+  .home-system-image {
+    width: 100%;
   }
 
   .feature-grid {
