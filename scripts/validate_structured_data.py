@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
-HOME_URL = "https://exosett.com/"
+HOME_URL = "https://www.exosett.com/"
 EXCLUDED_PAGES = (
     ROOT / "system" / "index.html",
     ROOT / "components" / "index.html",
@@ -133,7 +133,7 @@ def validate_breadcrumb_url(url: Any, source: Path, errors: list[str]) -> None:
     parsed = urlparse(url)
     if (
         parsed.scheme != "https"
-        or parsed.netloc != "exosett.com"
+        or parsed.netloc != "www.exosett.com"
         or not parsed.path.endswith("/")
         or parsed.params
         or parsed.query
@@ -148,6 +148,23 @@ def validate_breadcrumb_url(url: Any, source: Path, errors: list[str]) -> None:
     if not destination.is_file():
         errors.append(
             f"{relative(source)}: breadcrumb destination does not exist: {url}"
+        )
+
+
+def validate_canonical_url(url: Any, source: Path, errors: list[str]) -> None:
+    expected_path = "/" if source == ROOT / "index.html" else f"/{source.parent.relative_to(ROOT).as_posix()}/"
+    parsed = urlparse(url) if isinstance(url, str) else None
+    if (
+        parsed is None
+        or parsed.scheme != "https"
+        or parsed.netloc != "www.exosett.com"
+        or parsed.path != expected_path
+        or parsed.params
+        or parsed.query
+        or parsed.fragment
+    ):
+        errors.append(
+            f"{relative(source)}: canonical URL must be {HOME_URL.rstrip('/')}{expected_path}"
         )
 
 
@@ -205,6 +222,9 @@ def main() -> int:
     html_pages = sorted(ROOT.rglob("*.html"))
     parsed_pages = {path: parse_page(path, errors) for path in html_pages}
 
+    for path, (parser, _) in parsed_pages.items():
+        validate_canonical_url(parser.canonical, path, errors)
+
     home_documents = parsed_pages[ROOT / "index.html"][1]
     websites = [
         node
@@ -219,7 +239,7 @@ def main() -> int:
             errors.append("index.html: WebSite name must be ExoSett")
         if website.get("url") != HOME_URL:
             errors.append(f"index.html: WebSite URL must be {HOME_URL}")
-        if website.get("@id") != "https://exosett.com/#website":
+        if website.get("@id") != "https://www.exosett.com/#website":
             errors.append("index.html: WebSite @id is incorrect")
 
     component_pages = sorted((ROOT / "components").glob("*/index.html"))
