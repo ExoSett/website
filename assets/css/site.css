@@ -294,6 +294,10 @@ a {
   gap: 24px;
 }
 
+.feature-grid--single {
+  grid-template-columns: minmax(0, var(--text-width));
+}
+
 .feature-card {
   display: flex;
   flex-direction: column;
@@ -349,6 +353,55 @@ a {
 
 .prose .component-media {
   margin: 32px 0;
+}
+
+.comparison-table {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.comparison-table table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: var(--font-size-small);
+  line-height: 1.5;
+}
+
+.comparison-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.comparison-table :is(th, td) {
+  width: 33.333%;
+  padding: 18px;
+  border: 1px solid var(--colour-rule-strong);
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparison-table thead th {
+  background: var(--colour-background-subtle);
+  font-weight: var(--font-weight-semibold);
+}
+
+.comparison-table tbody th {
+  font-weight: var(--font-weight-medium);
+}
+
+.qualification {
+  margin-inline: calc(-1 * var(--page-gutter));
+  padding-inline: var(--page-gutter);
+  background: var(--colour-background-subtle);
+  border-top-color: var(--colour-rule-strong);
 }
 
 .related-links {
@@ -442,6 +495,11 @@ a {
 
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .qualification {
+    margin-inline: calc(-1 * var(--page-gutter-mobile));
+    padding-inline: var(--page-gutter-mobile);
   }
 
   .feature-card {

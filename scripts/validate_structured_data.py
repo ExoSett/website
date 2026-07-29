@@ -244,10 +244,13 @@ def main() -> int:
 
     component_pages = sorted((ROOT / "components").glob("*/index.html"))
     story_pages = sorted((ROOT / "stories").glob("*/index.html"))
+    about_pages = sorted((ROOT / "about").glob("*/index.html"))
     for path in component_pages:
         validate_breadcrumb_page(path, "Components", errors)
     for path in story_pages:
         validate_breadcrumb_page(path, "Stories", errors)
+    for path in about_pages:
+        validate_breadcrumb_page(path, "About", errors)
 
     for path in EXCLUDED_PAGES:
         _, documents = parsed_pages[path]
@@ -276,7 +279,8 @@ def main() -> int:
     print(
         "Structured data validation passed: "
         f"1 WebSite, {len(component_pages)} component breadcrumbs, "
-        f"{len(story_pages)} story breadcrumbs."
+        f"{len(story_pages)} story breadcrumbs, "
+        f"{len(about_pages)} About breadcrumbs."
     )
     return 0
 
