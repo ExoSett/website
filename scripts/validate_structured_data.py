@@ -13,6 +13,12 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 HOME_URL = "https://www.exosett.com/"
+ACCOMMODATION_CASSETTE_URL = (
+    "https://www.exosett.com/components/accommodation-cassette/"
+)
+ACCOMMODATION_MODULE_REDIRECT = (
+    ROOT / "components" / "accommodation-module" / "index.html"
+)
 EXCLUDED_PAGES = (
     ROOT / "system" / "index.html",
     ROOT / "components" / "index.html",
@@ -40,6 +46,8 @@ class PageParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
         self.canonical: str | None = None
+        self.robots: str | None = None
+        self.refresh: str | None = None
         self.h1_parts: list[str] = []
         self.json_ld_texts: list[str] = []
         self._in_h1 = False
@@ -52,6 +60,10 @@ class PageParser(HTMLParser):
         attributes = dict(attrs)
         if tag == "link" and attributes.get("rel") == "canonical":
             self.canonical = attributes.get("href")
+        elif tag == "meta" and attributes.get("name") == "robots":
+            self.robots = attributes.get("content")
+        elif tag == "meta" and attributes.get("http-equiv") == "refresh":
+            self.refresh = attributes.get("content")
         elif tag == "h1":
             self._in_h1 = True
         elif tag == "script" and attributes.get("type") == "application/ld+json":
@@ -217,13 +229,42 @@ def validate_breadcrumb_page(
         validate_breadcrumb_url(item.get("item"), path, errors)
 
 
+def validate_redirect_page(
+    path: Path, parser: PageParser, documents: list[Any], errors: list[str]
+) -> None:
+    if parser.canonical != ACCOMMODATION_CASSETTE_URL:
+        errors.append(
+            f"{relative(path)}: redirect canonical must be "
+            f"{ACCOMMODATION_CASSETTE_URL}"
+        )
+    if parser.robots != "noindex, follow":
+        errors.append(f"{relative(path)}: redirect must use noindex, follow")
+    expected_refresh = f"0; url={ACCOMMODATION_CASSETTE_URL}"
+    if parser.refresh != expected_refresh:
+        errors.append(
+            f"{relative(path)}: redirect refresh must be {expected_refresh}"
+        )
+    if documents:
+        errors.append(f"{relative(path)}: redirect must not contain JSON-LD")
+
+
 def main() -> int:
     errors: list[str] = []
     html_pages = sorted(ROOT.rglob("*.html"))
     parsed_pages = {path: parse_page(path, errors) for path in html_pages}
 
     for path, (parser, _) in parsed_pages.items():
+        if path == ACCOMMODATION_MODULE_REDIRECT:
+            continue
         validate_canonical_url(parser.canonical, path, errors)
+
+    redirect_parser, redirect_documents = parsed_pages[ACCOMMODATION_MODULE_REDIRECT]
+    validate_redirect_page(
+        ACCOMMODATION_MODULE_REDIRECT,
+        redirect_parser,
+        redirect_documents,
+        errors,
+    )
 
     home_documents = parsed_pages[ROOT / "index.html"][1]
     websites = [
@@ -242,7 +283,11 @@ def main() -> int:
         if website.get("@id") != "https://www.exosett.com/#website":
             errors.append("index.html: WebSite @id is incorrect")
 
-    component_pages = sorted((ROOT / "components").glob("*/index.html"))
+    component_pages = sorted(
+        path
+        for path in (ROOT / "components").glob("*/index.html")
+        if path != ACCOMMODATION_MODULE_REDIRECT
+    )
     story_pages = sorted((ROOT / "stories").glob("*/index.html"))
     about_pages = sorted((ROOT / "about").glob("*/index.html"))
     for path in component_pages:
