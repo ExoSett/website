@@ -21,11 +21,16 @@ The site is intentionally simple:
 
 ## Validation
 
-Validate the JSON-LD structured data with:
+Run the complete site validation, including internal links, local assets,
+metadata, image dimensions, story illustrations, sitemap coverage and JSON-LD,
+with:
 
 ```sh
-python3 scripts/validate_structured_data.py
+python3 scripts/validate.py
 ```
+
+The structured-data checks can still be run independently with
+`python3 scripts/validate_structured_data.py`.
 
 ## Brand assets
 
