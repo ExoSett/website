@@ -266,6 +266,7 @@ a {
 .story-illustration-note {
   display: block;
   margin-top: 8px;
+  font-style: italic;
 }
 
 .site-section {
