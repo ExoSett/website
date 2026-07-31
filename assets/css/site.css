@@ -263,6 +263,11 @@ a {
   font-size: var(--font-size-small);
 }
 
+.story-illustration-note {
+  display: block;
+  margin-top: 8px;
+}
+
 .site-section {
   padding: var(--section-padding) 0;
   border-top: 1px solid var(--colour-rule);
