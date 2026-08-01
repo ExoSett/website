@@ -19,8 +19,12 @@ ACCOMMODATION_CASSETTE_URL = (
 ACCOMMODATION_MODULE_REDIRECT = (
     ROOT / "components" / "accommodation-module" / "index.html"
 )
+SYSTEM_REDIRECT = ROOT / "system" / "index.html"
+REDIRECTS = {
+    ACCOMMODATION_MODULE_REDIRECT: ACCOMMODATION_CASSETTE_URL,
+    SYSTEM_REDIRECT: HOME_URL,
+}
 EXCLUDED_PAGES = (
-    ROOT / "system" / "index.html",
     ROOT / "components" / "index.html",
     ROOT / "design" / "index.html",
     ROOT / "stories" / "index.html",
@@ -231,16 +235,19 @@ def validate_breadcrumb_page(
 
 
 def validate_redirect_page(
-    path: Path, parser: PageParser, documents: list[Any], errors: list[str]
+    path: Path,
+    expected_url: str,
+    parser: PageParser,
+    documents: list[Any],
+    errors: list[str],
 ) -> None:
-    if parser.canonical != ACCOMMODATION_CASSETTE_URL:
+    if parser.canonical != expected_url:
         errors.append(
-            f"{relative(path)}: redirect canonical must be "
-            f"{ACCOMMODATION_CASSETTE_URL}"
+            f"{relative(path)}: redirect canonical must be {expected_url}"
         )
     if parser.robots != "noindex, follow":
         errors.append(f"{relative(path)}: redirect must use noindex, follow")
-    expected_refresh = f"0; url={ACCOMMODATION_CASSETTE_URL}"
+    expected_refresh = f"0; url={expected_url}"
     if parser.refresh != expected_refresh:
         errors.append(
             f"{relative(path)}: redirect refresh must be {expected_refresh}"
@@ -255,17 +262,19 @@ def main() -> int:
     parsed_pages = {path: parse_page(path, errors) for path in html_pages}
 
     for path, (parser, _) in parsed_pages.items():
-        if path == ACCOMMODATION_MODULE_REDIRECT:
+        if path in REDIRECTS:
             continue
         validate_canonical_url(parser.canonical, path, errors)
 
-    redirect_parser, redirect_documents = parsed_pages[ACCOMMODATION_MODULE_REDIRECT]
-    validate_redirect_page(
-        ACCOMMODATION_MODULE_REDIRECT,
-        redirect_parser,
-        redirect_documents,
-        errors,
-    )
+    for path, expected_url in REDIRECTS.items():
+        redirect_parser, redirect_documents = parsed_pages[path]
+        validate_redirect_page(
+            path,
+            expected_url,
+            redirect_parser,
+            redirect_documents,
+            errors,
+        )
 
     home_documents = parsed_pages[ROOT / "index.html"][1]
     websites = [

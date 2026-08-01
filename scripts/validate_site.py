@@ -121,9 +121,12 @@ class SiteValidator:
 
     def __init__(self, root):
         self.root = root.resolve()
-        self.redirect_page = (
-            self.root / "components" / "accommodation-module" / "index.html"
-        )
+        self.redirect_pages = {
+            self.root / "components" / "accommodation-module" / "index.html": (
+                "https://www.exosett.com/components/accommodation-cassette/"
+            ),
+            self.root / "system" / "index.html": "https://www.exosett.com/",
+        }
         self.pages = {}
         self.errors = []
 
@@ -169,12 +172,7 @@ class SiteValidator:
                 self.error(page, f"expected exactly one {tag}, found {count}")
 
     def validate_canonical(self, page):
-        if page.path == self.redirect_page:
-            expected = (
-                "https://www.exosett.com/components/accommodation-cassette/"
-            )
-        else:
-            expected = self.page_url(page.path)
+        expected = self.redirect_pages.get(page.path, self.page_url(page.path))
 
         if page.canonicals != [expected]:
             self.error(page, f"canonical must be exactly {expected}")
