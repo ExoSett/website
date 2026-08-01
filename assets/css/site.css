@@ -213,6 +213,26 @@ a {
   line-height: var(--line-height-lead);
 }
 
+.story-navigation {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 28px 0 0;
+  font-size: var(--font-size-small);
+}
+
+.story-navigation a {
+  font-weight: var(--font-weight-medium);
+  text-underline-offset: 0.25em;
+}
+
+.story-navigation--footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--colour-rule);
+}
+
 .intro__body {
   max-width: var(--text-width);
   margin: 24px 0 0;
