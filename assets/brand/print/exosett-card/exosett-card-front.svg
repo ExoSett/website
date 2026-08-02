@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="61mm" viewBox="0 0 91 61" role="img" aria-labelledby="title desc">
+  <title id="title">ExoSett business card front</title>
+  <desc id="desc">Print artwork with 3 mm bleed. The 85 by 55 mm trim begins at 3 mm, and important artwork stays at least 4 mm inside the trim.</desc>
+  <defs>
+    <style>
+      @font-face { font-family: "IBM Plex Sans"; src: url("../../../fonts/ibm-plex-sans/IBMPlexSans-Regular.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "IBM Plex Sans"; src: url("../../../fonts/ibm-plex-sans/IBMPlexSans-Medium.woff2") format("woff2"); font-weight: 500; }
+      .plex { font-family: "IBM Plex Sans", Arial, sans-serif; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#111111"/>
+    </marker>
+    <path id="symbol" d="M64 36V58.501953A13 13 0 0 0 58.501953 64H36V76H58.501953A13 13 0 0 0 64 81.498047V158.50195A13 13 0 0 0 58.501953 164H36V176H58.501953A13 13 0 0 0 64 181.49805V204H76V181.49805A13 13 0 0 0 81.498047 176H158.50195A13 13 0 0 0 164 181.49805V204H176V181.49805A13 13 0 0 0 181.49805 176H204V164H181.5293A13 13 0 0 0 176 158.4707V81.498047A13 13 0 0 0 181.49805 76H204V64H181.5293A13 13 0 0 0 176 58.470703V36H164V58.501953A13 13 0 0 0 158.50195 64H81.529297A13 13 0 0 0 76 58.470703V36ZM70 61.5A8.5 8.5 0 1 1 70 78.5 8.5 8.5 0 0 1 70 61.5ZM170 61.5A8.5 8.5 0 1 1 170 78.5 8.5 8.5 0 0 1 170 61.5ZM81.498047 76H158.50195A13 13 0 0 1 164 81.498047V158.50195A13 13 0 0 1 158.50195 164H81.529297A13 13 0 0 1 76 158.4707V81.498047A13 13 0 0 1 81.498047 76ZM70 161.5A8.5 8.5 0 1 1 70 178.5 8.5 8.5 0 0 1 70 161.5ZM170 161.5A8.5 8.5 0 1 1 170 178.5 8.5 8.5 0 0 1 170 161.5Z"/>
+  </defs>
+
+  <!-- Full-bleed background. Trim box: x=3, y=3, width=85, height=55. Safe box: x=7, y=7, width=77, height=47. -->
+  <rect width="91" height="61" fill="#f5f5f3"/>
+
+  <!-- Brand lock-up, assembled from the approved symbol and IBM Plex Sans Medium wordmark. -->
+  <g fill="#111111">
+    <use href="#symbol" transform="translate(6.45 6.15) scale(.038)"/>
+    <text class="plex" x="15.1" y="13.6" font-size="5.6" font-weight="500" letter-spacing="-.12">ExoSett</text>
+  </g>
+
+  <text class="plex" x="8" y="27.1" fill="#111111" font-size="5.2" font-weight="500" letter-spacing="-.16">
+    <tspan x="8" dy="0">Buildings that</tspan>
+    <tspan x="8" dy="6.1">can evolve</tspan>
+  </text>
+  <line x1="8" y1="45.8" x2="38.5" y2="45.8" stroke="#b8b8b6" stroke-width=".28"/>
+  <text class="plex" x="8" y="49.5" fill="#5f5f5f" font-size="1.75" font-weight="500" letter-spacing=".22">AN ADAPTABLE BUILDING SYSTEM</text>
+
+  <!-- Compact adaptation of the social card's frame, installed cassettes and incoming replacement cassette. -->
+  <g aria-label="Frame and cassette diagram">
+    <g fill="none" stroke="#111111" stroke-linecap="round" stroke-width=".72">
+      <path d="M54 16H82M54 29H82M54 42H82M54 16V42M63.33 16V42M72.67 16V42M82 16V42"/>
+    </g>
+    <g fill="#f5f5f3" stroke="#111111" stroke-width=".5">
+      <circle cx="54" cy="16" r=".92"/><circle cx="63.33" cy="16" r=".92"/><circle cx="72.67" cy="16" r=".92"/><circle cx="82" cy="16" r=".92"/>
+      <circle cx="54" cy="29" r=".92"/><circle cx="63.33" cy="29" r=".92"/><circle cx="72.67" cy="29" r=".92"/><circle cx="82" cy="29" r=".92"/>
+      <circle cx="54" cy="42" r=".92"/><circle cx="63.33" cy="42" r=".92"/><circle cx="72.67" cy="42" r=".92"/><circle cx="82" cy="42" r=".92"/>
+    </g>
+    <g stroke="#111111" stroke-width=".34">
+      <rect x="55.25" y="17.45" width="6.8" height="10.1" rx=".15" fill="#ffffff"/>
+      <rect x="64.6" y="17.45" width="6.8" height="10.1" rx=".15" fill="#ffffff"/>
+      <rect x="73.9" y="30.45" width="6.8" height="10.1" rx=".15" fill="#ffffff"/>
+      <path d="M56.65 20h4v4.2h-4Zm2 0v4.2M66 20h4v4.2h-4Zm2 0v4.2M75.3 33h4v4.2h-4Zm2 0v4.2" fill="#f5f5f3"/>
+    </g>
+    <path d="M48.8 35.5h4.1" fill="none" stroke="#111111" stroke-width=".35" stroke-dasharray=".8 .7" marker-end="url(#arrow)"/>
+    <g transform="translate(42.7 30.45)" stroke="#111111" stroke-width=".4">
+      <rect width="6.7" height="10.1" rx=".15" fill="#111111"/>
+      <path d="M1.35 2.3h4v4.2h-4Zm2 0v4.2M1.1 8.35h4.5" fill="#f5f5f3" stroke="#f5f5f3"/>
+    </g>
+  </g>
+</svg>
