@@ -17,11 +17,15 @@
   <!-- Full-bleed background. Trim box: x=3, y=3, width=85, height=55. Safe box: x=7, y=7, width=77, height=47. -->
   <rect width="91" height="61" fill="#f5f5f3"/>
 
-  <!-- Brand lock-up, assembled from the approved symbol and IBM Plex Sans Medium wordmark. -->
-  <g fill="#111111">
-    <use href="#symbol" transform="translate(6.45 6.15) scale(.038)"/>
-    <text class="plex" x="15.1" y="13.6" font-size="5.6" font-weight="500" letter-spacing="-.12">ExoSett</text>
-  </g>
+  <!-- Unmodified approved production lock-up, derived from the editable source master. -->
+  <image
+    x="7"
+    y="7"
+    width="27.48"
+    height="6.68"
+    preserveAspectRatio="xMinYMin meet"
+    href="../../web/exosett-logo-horizontal.svg"
+  />
 
   <text class="plex" x="8" y="27.1" fill="#111111" font-size="5.2" font-weight="500" letter-spacing="-.16">
     <tspan x="8" dy="0">Buildings that</tspan>
