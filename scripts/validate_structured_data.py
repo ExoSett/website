@@ -13,15 +13,15 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 HOME_URL = "https://www.exosett.com/"
-ACCOMMODATION_CASSETTE_URL = (
-    "https://www.exosett.com/components/accommodation-cassette/"
+ACCOMMODATION_MODULE_URL = (
+    "https://www.exosett.com/components/accommodation-module/"
 )
-ACCOMMODATION_MODULE_REDIRECT = (
-    ROOT / "components" / "accommodation-module" / "index.html"
+ACCOMMODATION_CASSETTE_REDIRECT = (
+    ROOT / "components" / "accommodation-cassette" / "index.html"
 )
 SYSTEM_REDIRECT = ROOT / "system" / "index.html"
 REDIRECTS = {
-    ACCOMMODATION_MODULE_REDIRECT: ACCOMMODATION_CASSETTE_URL,
+    ACCOMMODATION_CASSETTE_REDIRECT: ACCOMMODATION_MODULE_URL,
     SYSTEM_REDIRECT: HOME_URL,
 }
 EXCLUDED_PAGES = (
@@ -296,7 +296,7 @@ def main() -> int:
     component_pages = sorted(
         path
         for path in (ROOT / "components").glob("*/index.html")
-        if path != ACCOMMODATION_MODULE_REDIRECT
+        if path != ACCOMMODATION_CASSETTE_REDIRECT
     )
     story_pages = sorted((ROOT / "stories").glob("*/index.html"))
     design_pages = sorted((ROOT / "design").glob("*/index.html"))

@@ -122,8 +122,8 @@ class SiteValidator:
     def __init__(self, root):
         self.root = root.resolve()
         self.redirect_pages = {
-            self.root / "components" / "accommodation-module" / "index.html": (
-                "https://www.exosett.com/components/accommodation-cassette/"
+            self.root / "components" / "accommodation-cassette" / "index.html": (
+                "https://www.exosett.com/components/accommodation-module/"
             ),
             self.root / "system" / "index.html": "https://www.exosett.com/",
         }
