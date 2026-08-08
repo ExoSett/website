@@ -111,17 +111,21 @@
         </p>
       </section>
 
-      <figure class="component-media" aria-labelledby="accommodation-frame-media-caption">
+      <figure
+        class="component-media component-media--transparent"
+        aria-labelledby="accommodation-frame-media-caption"
+      >
         <video
           class="component-media__video"
+          data-turntable
           autoplay
           loop
           muted
           playsinline
-          preload="metadata"
+          preload="auto"
           poster="/assets/media/components/accommodation-frame/poster.webp"
-          width="640"
-          height="360"
+          width="960"
+          height="540"
           aria-describedby="accommodation-frame-media-caption"
         >
           <source
@@ -133,19 +137,22 @@
             type="video/mp4"
           />
           Your browser does not support embedded video. The illustration shows
-          accommodation modules being independently inserted into and removed
-          from the structural frame.
+          a five-cell-wide, three-cell-high accommodation frame with its
+          corresponding service frame.
         </video>
         <img
           class="component-media__poster"
           src="/assets/media/components/accommodation-frame/poster.webp"
-          width="640"
-          height="360"
-          alt="Accommodation modules positioned within the structural frame"
+          width="960"
+          height="540"
+          alt="A five-cell-wide, three-cell-high accommodation frame with its corresponding service frame"
         />
         <figcaption id="accommodation-frame-media-caption">
-          Accommodation modules can be inserted, supported and removed
-          independently within the frame.
+          A five-cell-wide, three-cell-high accommodation frame (blue) with its
+          corresponding service frame (grey).
+          <span class="component-media__interaction-hint">
+            Drag or swipe horizontally to rotate.
+          </span>
         </figcaption>
       </figure>
 
