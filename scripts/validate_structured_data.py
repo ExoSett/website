@@ -186,7 +186,10 @@ def validate_canonical_url(url: Any, source: Path, errors: list[str]) -> None:
 
 
 def validate_breadcrumb_page(
-    path: Path, section: str, errors: list[str]
+    path: Path,
+    section: str,
+    errors: list[str],
+    intermediate_names: tuple[str, ...] = (),
 ) -> None:
     parser, documents = parse_page(path, errors)
     breadcrumbs = [
@@ -202,17 +205,22 @@ def validate_breadcrumb_page(
         return
 
     items = breadcrumbs[0].get("itemListElement")
-    if not isinstance(items, list) or len(items) != 3:
-        errors.append(f"{relative(path)}: breadcrumb must contain three items")
+    expected_count = 3 + len(intermediate_names)
+    if not isinstance(items, list) or len(items) != expected_count:
+        errors.append(
+            f"{relative(path)}: breadcrumb must contain {expected_count} items"
+        )
         return
 
     positions = [item.get("position") for item in items if isinstance(item, dict)]
-    if positions != [1, 2, 3]:
+    expected_positions = list(range(1, expected_count + 1))
+    if positions != expected_positions:
         errors.append(
-            f"{relative(path)}: breadcrumb positions must be exactly 1, 2, 3"
+            f"{relative(path)}: breadcrumb positions must be exactly "
+            f"{', '.join(str(position) for position in expected_positions)}"
         )
 
-    expected_names = ["ExoSett", section, parser.h1]
+    expected_names = ["ExoSett", section, *intermediate_names, parser.h1]
     names = [item.get("name") for item in items if isinstance(item, dict)]
     if names != expected_names:
         errors.append(
@@ -222,7 +230,7 @@ def validate_breadcrumb_page(
 
     if not parser.canonical:
         errors.append(f"{relative(path)}: canonical URL is missing")
-    elif not isinstance(items[2], dict) or items[2].get("item") != parser.canonical:
+    elif not isinstance(items[-1], dict) or items[-1].get("item") != parser.canonical:
         errors.append(
             f"{relative(path)}: final breadcrumb URL must match the canonical URL"
         )
@@ -301,6 +309,7 @@ def main() -> int:
     story_pages = sorted((ROOT / "stories").glob("*/index.html"))
     design_pages = sorted((ROOT / "design").glob("*/index.html"))
     about_pages = sorted((ROOT / "about").glob("*/index.html"))
+    nested_about_pages = sorted((ROOT / "about").glob("*/*/index.html"))
     for path in component_pages:
         validate_breadcrumb_page(path, "Components", errors)
     for path in design_pages:
@@ -309,6 +318,13 @@ def main() -> int:
         validate_breadcrumb_page(path, "Stories", errors)
     for path in about_pages:
         validate_breadcrumb_page(path, "About", errors)
+    for path in nested_about_pages:
+        validate_breadcrumb_page(
+            path,
+            "About",
+            errors,
+            intermediate_names=("Research and Reading",),
+        )
 
     for path in EXCLUDED_PAGES:
         _, documents = parsed_pages[path]
@@ -339,7 +355,7 @@ def main() -> int:
         f"1 WebSite, {len(component_pages)} component breadcrumbs, "
         f"{len(design_pages)} Design breadcrumbs, "
         f"{len(story_pages)} story breadcrumbs, "
-        f"{len(about_pages)} About breadcrumbs."
+        f"{len(about_pages) + len(nested_about_pages)} About breadcrumbs."
     )
     return 0
 
