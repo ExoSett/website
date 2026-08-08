@@ -115,19 +115,26 @@
         </p>
       </section>
 
-      <figure class="component-media" aria-labelledby="service-frame-media-caption">
+      <figure
+        class="component-media component-media--transparent"
+        aria-labelledby="service-frame-media-caption"
+      >
         <video
           class="component-media__video"
           autoplay
           loop
           muted
           playsinline
-          preload="metadata"
+          preload="auto"
           poster="/assets/media/components/service-frame/poster.webp"
-          width="640"
-          height="360"
+          width="960"
+          height="540"
           aria-describedby="service-frame-media-caption"
         >
+          <source
+            src="/assets/media/components/service-frame/animation.mov"
+            type='video/quicktime; codecs="hvc1"'
+          />
           <source
             src="/assets/media/components/service-frame/animation.webm"
             type="video/webm"
@@ -143,13 +150,13 @@
         <img
           class="component-media__poster"
           src="/assets/media/components/service-frame/poster.webp"
-          width="640"
-          height="360"
-          alt="Service frame alongside the accommodation frame"
+          width="960"
+          height="540"
+          alt="A highlighted service frame alongside the accommodation frame"
         />
         <figcaption id="service-frame-media-caption">
-          The service frame provides continuing access and utility routes for
-          the accommodation it serves.
+          The service frame (green) provides continuing access and utility
+          routes for the accommodation frame (blue) it serves.
         </figcaption>
       </figure>
 
