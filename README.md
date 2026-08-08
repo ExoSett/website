@@ -40,8 +40,9 @@ Logo source files, production SVGs, favicon assets and usage guidance are in [`a
 
 Review animations for component pages are stored by component in
 `assets/media/components/<component-name>/`. Each set uses `animation.webm`,
-`animation.mp4` and `poster.webp`; pages list WebM first and use the poster as a
-static alternative when reduced motion is requested.
+`animation.mp4` and `poster.webp`; transparent turntables additionally use an
+HEVC-alpha `animation.mov` for Safari. Pages use the poster as a static
+alternative when reduced motion is requested.
 
 ## Copyright
 
