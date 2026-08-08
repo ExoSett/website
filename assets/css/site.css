@@ -244,11 +244,22 @@ a {
   margin-top: 24px;
 }
 
-.home-system-image {
+.home-system-figure {
   width: 60%;
   max-width: 100%;
+  margin: 48px 0 0;
+}
+
+.home-system-image {
+  width: 100%;
   height: auto;
-  margin-top: 48px;
+}
+
+.home-system-caption {
+  margin-top: 12px;
+  color: var(--colour-muted);
+  font-size: var(--font-size-small);
+  line-height: 1.5;
 }
 
 .component-media {
@@ -515,7 +526,7 @@ a {
     margin-bottom: var(--section-padding-mobile);
   }
 
-  .home-system-image {
+  .home-system-figure {
     width: 100%;
   }
 
