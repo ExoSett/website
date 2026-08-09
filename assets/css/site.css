@@ -282,7 +282,8 @@ a {
 }
 
 .component-media--transparent .component-media__video,
-.component-media--transparent .component-media__poster {
+.component-media--transparent .component-media__poster,
+.component-media--transparent .component-media__image {
   background: transparent;
 }
 
