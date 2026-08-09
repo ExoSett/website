@@ -6,7 +6,7 @@ published: false
 
 ## Source
 
-- Slug: `modular-housing-and-permanence`
+- Slug: `2019-place-ladywell`
 - Authors / organisation: Ella Harris, Katherine Brickell and Mel Nowicki; Royal Holloway, University of London
 - Publication date: September 2019
 - Underlying report URL: https://pure.royalholloway.ac.uk/files/34520821/LewishamReport_FINAL_Sep_2019.pdf

@@ -6,7 +6,7 @@ published: false
 
 ## Source
 
-- Slug: `modular-homes-and-lived-experience`
+- Slug: `2023-cambridge-modular-homes`
 - Authors / organisation: Richmond Juvenile Ehwi, Kwadwo Oti-Sarpong, Gemma Burgess, Johannes Lenhard and Eana Meng; published in *Human Ecology*
 - Publication date: 12 April 2023 (online publication)
 - Original URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC10090745/

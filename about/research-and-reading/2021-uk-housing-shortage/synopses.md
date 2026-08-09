@@ -6,7 +6,7 @@ published: false
 
 ## Source
 
-- Slug: `modular-housing-and-uk-shortage`
+- Slug: `2021-uk-housing-shortage`
 - Authors / organisation: Joseph Kwame Ofori-Kuragu and Reece Hill; Proceedings of the CIB International Conference on Smart Built Environment (ICSBE 2021)
 - Publication date: December 2021
 - Original URL: https://www.researchgate.net/publication/358711883_An_Exploration_of_the_Potential_for_Using_Modular_Housing_Solutions_to_Address_the_UK%27s_Housing_Shortage

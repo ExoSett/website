@@ -6,7 +6,7 @@ published: false
 
 ## Source
 
-- Slug: `modular-housing-and-homelessness`
+- Slug: `2022-modular-housing-homelessness`
 - Authors / organisation: Dr Katy Karampour and Dr Gemma Burgess; Centre for Homelessness Impact, with the Cambridge Centre for Housing and Planning Research
 - Publication date: April 2022
 - Original URL: https://www.landecon.cam.ac.uk/sites/default/files/2024-05/Insights%20into%20the%20use%20of%20modular%20housing%20in%20addressing%20homelessness%20report.pdf

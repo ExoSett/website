@@ -6,7 +6,7 @@ published: false
 
 ## Source
 
-- Slug: `modular-housing`
+- Slug: `2019-arup-housing-revolution`
 - Author / organisation: Vicky Evans, Arup
 - Publication date: August 2019 (listed as “Last updated”)
 - Original URL: https://www.arup.com/insights/could-modular-construction-spark-a-housing-revolution/

@@ -6,7 +6,7 @@ published: false
 
 ## Source
 
-- Slug: `modular-housing-without-second-class-housing`
+- Slug: `2025-feantsa-modular-housing`
 - Author / organisation: Ioana Vlad, Housing Policy Officer, FEANTSA; Housing Solutions Platform
 - Publication date: March 2025
 - Original URL: https://www.feantsa.org/files/Themes/HSP/2025/dos-and-donts/The_Dos__Donts_of_Modular_Housing.pdf
