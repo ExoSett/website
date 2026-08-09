@@ -260,12 +260,6 @@ class SiteValidator:
 
     def validate_story(self, page):
         illustration_count = len(page.story_illustrations)
-        illustration_pending = page.path == (
-            self.root / "stories" / "the-resolver" / "index.html"
-        )
-        if illustration_pending and illustration_count == 0:
-            return
-
         if illustration_count != 1:
             self.error(
                 page,
