@@ -267,6 +267,12 @@ a {
   margin: 0 0 var(--section-padding);
 }
 
+@media (min-width: 48.0625rem) {
+  .component-media--turntable {
+    width: min(75%, var(--text-width));
+  }
+}
+
 .component-media__video,
 .component-media__poster {
   width: 100%;
