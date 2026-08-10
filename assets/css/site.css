@@ -400,6 +400,10 @@ a {
   margin-top: 20px;
 }
 
+.prose > h2 {
+  margin: 56px 0 20px;
+}
+
 .prose .component-media {
   margin: 32px 0;
 }
