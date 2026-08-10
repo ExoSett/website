@@ -11,6 +11,7 @@ from urllib.parse import unquote, urlparse
 
 
 SITE_ORIGIN = "https://www.exosett.com"
+PLAUSIBLE_SCRIPT = "https://plausible.io/js/pa-9HDyBRtGCfdRI8XmL-cAr.js"
 STANDARD_STORY_NOTE = (
     "This story illustration is intended to depict a scene from the story "
     "rather than accurately represent ExoSett engineering or a finished "
@@ -39,10 +40,15 @@ class Page(HTMLParser):
         self.canonicals = []
         self.robots = ""
         self.metadata = {}
+        self.title_parts = []
+        self.script_texts = []
         self.story_illustrations = []
         self.story_notes = []
         self._note_depth = 0
         self._note_parts = []
+        self._in_title = False
+        self._in_inline_script = False
+        self._script_parts = []
         self.feed(path.read_text(encoding="utf-8"))
 
     def handle_starttag(self, tag, attrs):
@@ -86,12 +92,25 @@ class Page(HTMLParser):
                 if key:
                     self.metadata.setdefault(key, []).append(content)
 
+        if tag == "title":
+            self._in_title = True
+        if tag == "script" and not attributes.get("src"):
+            self._in_inline_script = True
+            self._script_parts = []
+
     def handle_startendtag(self, tag, attrs):
         self.handle_starttag(tag, attrs)
         if self._note_depth > 1:
             self._note_depth -= 1
 
     def handle_endtag(self, tag):
+        if tag == "title":
+            self._in_title = False
+        if tag == "script" and self._in_inline_script:
+            self.script_texts.append("".join(self._script_parts))
+            self._in_inline_script = False
+            self._script_parts = []
+
         if not self._note_depth:
             return
         self._note_depth -= 1
@@ -101,6 +120,10 @@ class Page(HTMLParser):
             self._note_parts = []
 
     def handle_data(self, data):
+        if self._in_title:
+            self.title_parts.append(data)
+        if self._in_inline_script:
+            self._script_parts.append(data)
         if self._note_depth:
             self._note_parts.append(data)
 
@@ -114,6 +137,10 @@ class Page(HTMLParser):
 
     def metadata_values(self, name):
         return self.metadata.get(name, [])
+
+    @property
+    def title(self):
+        return " ".join("".join(self.title_parts).split())
 
 
 class SiteValidator:
@@ -136,6 +163,9 @@ class SiteValidator:
         for page in self.pages.values():
             self.validate_page(page)
 
+        self.validate_unique_metadata()
+        self.validate_navigation()
+
         for path in sorted((self.root / "stories").glob("*/index.html")):
             self.validate_story(self.pages[path.resolve()])
 
@@ -155,6 +185,8 @@ class SiteValidator:
         self.validate_references(page)
         self.validate_images(page)
         self.validate_social_metadata(page)
+        self.validate_search_metadata(page)
+        self.validate_analytics(page)
 
     def validate_ids(self, page):
         counts = Counter(element_id for element_id, _ in page.ids)
@@ -258,6 +290,90 @@ class SiteValidator:
         if og_alt is not None and not og_alt.strip():
             self.error(page, "social image alt text must not be empty")
 
+    def validate_search_metadata(self, page):
+        if page.noindex:
+            return
+
+        title_count = page.tag_counts["title"]
+        if title_count != 1:
+            self.error(page, f"expected exactly one title, found {title_count}")
+        elif not page.title:
+            self.error(page, "title must not be empty")
+
+        descriptions = page.metadata_values("description")
+        if len(descriptions) != 1:
+            self.error(
+                page,
+                f"expected exactly one meta description, found {len(descriptions)}",
+            )
+        elif not descriptions[0].strip():
+            self.error(page, "meta description must not be empty")
+
+    def validate_unique_metadata(self):
+        indexable_pages = [page for page in self.pages.values() if not page.noindex]
+        self.report_duplicate_values(
+            ((page.title, page) for page in indexable_pages if page.title),
+            "title",
+        )
+        self.report_duplicate_values(
+            (
+                (descriptions[0].strip(), page)
+                for page in indexable_pages
+                if len(descriptions := page.metadata_values("description")) == 1
+                and descriptions[0].strip()
+            ),
+            "meta description",
+        )
+
+    def report_duplicate_values(self, values_and_pages, label):
+        pages_by_value = {}
+        for value, page in values_and_pages:
+            pages_by_value.setdefault(value, []).append(page)
+        for value, pages in sorted(pages_by_value.items()):
+            if len(pages) > 1:
+                locations = ", ".join(self.relative(page.path) for page in pages)
+                self.error(
+                    None,
+                    f"duplicate {label} {value!r} in {locations}",
+                    label="site metadata",
+                )
+
+    def validate_analytics(self, page):
+        if page.noindex:
+            return
+
+        scripts = [
+            value
+            for value, source, _ in page.references
+            if source == "script src" and value == PLAUSIBLE_SCRIPT
+        ]
+        if len(scripts) != 1:
+            self.error(
+                page,
+                f"expected Plausible tracking script exactly once, found {len(scripts)}",
+            )
+        if not any("plausible.init()" in text for text in page.script_texts):
+            self.error(page, "Plausible initialization code is missing")
+
+    def validate_navigation(self):
+        homepage = (self.root / "index.html").resolve()
+        reachable = {homepage}
+        pending = [homepage]
+
+        while pending:
+            source = pending.pop()
+            for value, reference_type, _ in self.pages[source].references:
+                if reference_type != "a href":
+                    continue
+                destination = self.local_path(source, value)
+                if destination in self.pages and destination not in reachable:
+                    reachable.add(destination)
+                    pending.append(destination)
+
+        for page in self.pages.values():
+            if not page.noindex and page.path not in reachable:
+                self.error(page, "indexable page is not reachable from the homepage")
+
     def validate_story(self, page):
         illustration_count = len(page.story_illustrations)
         if illustration_count != 1:
@@ -300,10 +416,40 @@ class SiteValidator:
             return
 
         namespace = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-        actual = {
-            element.text or ""
+        locations = [
+            (element.text or "").strip()
             for element in sitemap.findall("s:url/s:loc", namespace)
-        }
+        ]
+        location_counts = Counter(locations)
+        for url, count in sorted(location_counts.items()):
+            if not url:
+                self.error(None, "contains an empty loc entry", label="sitemap.xml")
+            elif count > 1:
+                self.error(
+                    None,
+                    f"contains duplicate loc entry {url} ({count} times)",
+                    label="sitemap.xml",
+                )
+
+        for url in locations:
+            if not url:
+                continue
+            parsed = urlparse(url)
+            if (
+                parsed.scheme != "https"
+                or parsed.netloc != "www.exosett.com"
+                or (parsed.path != "/" and not parsed.path.endswith("/"))
+                or parsed.params
+                or parsed.query
+                or parsed.fragment
+            ):
+                self.error(
+                    None,
+                    f"URL is not in canonical ExoSett form: {url}",
+                    label="sitemap.xml",
+                )
+
+        actual = set(locations)
         expected = {
             self.page_url(page.path)
             for page in self.pages.values()
