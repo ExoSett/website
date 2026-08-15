@@ -1,0 +1,9 @@
+Mozilla Public License Version 2.0
+
+ExoSett Sketch is licensed under the Mozilla Public License, Version 2.0
+(SPDX identifier: MPL-2.0).
+
+The complete licence text is available at:
+https://www.mozilla.org/MPL/2.0/
+
+This notice is not a substitute for the licence text at that address.

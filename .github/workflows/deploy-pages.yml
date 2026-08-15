@@ -1,0 +1,89 @@
+name: Deploy ExoSett website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      modelling_ref:
+        description: Modelling branch, tag, or commit to publish
+        required: false
+        default: main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v7
+        with:
+          path: website
+
+      - name: Check out modelling
+        uses: actions/checkout@v7
+        with:
+          repository: ExoSett/modelling
+          ref: ${{ inputs.modelling_ref || 'main' }}
+          token: ${{ secrets.MODELLING_READ_TOKEN || github.token }}
+          path: modelling
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: modelling/sketch/package-lock.json
+
+      - name: Install Sketch dependencies
+        run: npm ci
+        working-directory: modelling/sketch
+
+      - name: Check and build Sketch
+        run: npm run check && npm run build:embed
+        working-directory: modelling/sketch
+
+      - name: Install browser test runtime
+        run: npx playwright install --with-deps chromium
+        working-directory: modelling/sketch
+
+      - name: Test Sketch in desktop and mobile layouts
+        run: npm run test:e2e
+        working-directory: modelling/sketch
+
+      - name: Assemble combined site
+        run: >-
+          python3 website/scripts/build_site.py
+          --sketch-dist modelling/sketch/dist-embed
+          --output _site
+
+      - name: Validate combined site
+        run: python3 scripts/validate.py
+        working-directory: _site
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

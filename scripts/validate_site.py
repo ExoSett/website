@@ -25,6 +25,10 @@ REFERENCE_ATTRIBUTES = {
     "source": ("src",),
     "video": ("poster",),
 }
+GENERATED_REFERENCES = {
+    "/design/sketch/assets/sketch.css",
+    "/design/sketch/assets/sketch.js",
+}
 
 
 class Page(HTMLParser):
@@ -215,6 +219,8 @@ class SiteValidator:
             if destination is None:
                 continue
             if not destination.is_file():
+                if value in GENERATED_REFERENCES:
+                    continue
                 self.error(page, f"missing {source} target: {value}", line)
                 continue
 

@@ -32,6 +32,28 @@ python3 scripts/validate.py
 The structured-data checks can still be run independently with
 `python3 scripts/validate_structured_data.py`.
 
+## ExoSett Sketch
+
+The public Sketch page is `/design/sketch/`. Its page shell belongs to this repository, while its browser application is built from the sibling `ExoSett/modelling` repository.
+
+To assemble and validate the combined site locally:
+
+```sh
+cd ../modelling/sketch
+npm ci
+npm run check
+npm run build:embed
+
+cd ../../website
+python3 scripts/build_site.py \
+  --sketch-dist ../modelling/sketch/dist-embed \
+  --output _site
+cd _site
+python3 scripts/validate.py
+```
+
+The `_site/` directory is generated deployment output and is not committed.
+
 ## Brand assets
 
 Logo source files, production SVGs, favicon assets and usage guidance are in [`assets/brand/`](assets/brand/).
