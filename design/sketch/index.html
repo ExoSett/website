@@ -7,7 +7,7 @@
     <title>ExoSett Sketch — ExoSett</title>
     <meta
       name="description"
-      content="Shape and explore a simple accommodation-frame and service-frame pair with ExoSett Sketch."
+      content="Shape and explore ExoSett buildings made from one, two or four accommodation and service frame pairs."
     />
     <link rel="canonical" href="https://www.exosett.com/design/sketch/" />
     <script type="application/ld+json">
@@ -23,7 +23,7 @@
     <meta property="og:site_name" content="ExoSett" />
     <meta
       property="og:description"
-      content="Shape and explore a simple accommodation-frame and service-frame pair with ExoSett Sketch."
+      content="Shape and explore ExoSett buildings made from one, two or four accommodation and service frame pairs."
     />
     <meta property="og:url" content="https://www.exosett.com/design/sketch/" />
     <meta property="og:image" content="https://www.exosett.com/assets/brand/social/exosett-social-card.png" />
@@ -33,7 +33,7 @@
     <meta name="twitter:title" content="ExoSett Sketch — ExoSett" />
     <meta
       name="twitter:description"
-      content="Shape and explore a simple accommodation-frame and service-frame pair with ExoSett Sketch."
+      content="Shape and explore ExoSett buildings made from one, two or four accommodation and service frame pairs."
     />
     <meta name="twitter:image" content="https://www.exosett.com/assets/brand/social/exosett-social-card.png" />
     <meta name="twitter:image:alt" content="Exoskeletons and exchangeable modules mean buildings can evolve." />
@@ -75,22 +75,29 @@
       <section class="sketch-intro">
         <p class="sketch-eyebrow">ExoSett design</p>
         <h1>Sketch</h1>
-        <p>Shape a simple frame pair and explore the relationship between accommodation and service frames.</p>
+        <p>Combine frame pairs into simple buildings and explore the relationship between accommodation and service frames.</p>
       </section>
 
       <section class="workspace" aria-label="ExoSett model workspace">
         <aside class="control-panel" aria-label="Model controls">
           <div>
-            <p class="control-eyebrow">Frame pair</p>
+            <p class="control-eyebrow">Building layout</p>
             <h2>Shape a simple building</h2>
             <p class="intro">Choose the accommodation-frame grid, then explore it in 3D.</p>
           </div>
 
           <div class="dimension-controls">
+            <label for="building-layout"><span>Building layout</span></label>
+            <select id="building-layout" name="buildingLayout"></select>
             <label for="cells-wide"><span>Cells wide</span><span class="range">1–20</span></label>
             <input id="cells-wide" name="cellsWide" type="number" min="1" max="20" step="1" value="5" />
             <label for="cells-high"><span>Cells high</span><span class="range">1–10</span></label>
             <input id="cells-high" name="cellsHigh" type="number" min="1" max="10" step="1" value="3" />
+            <div id="service-gap-control" class="conditional-control" hidden>
+              <label for="service-gap"><span>Service-frame gap</span><span class="range">0–3 module depths</span></label>
+              <input id="service-gap" name="serviceGap" type="number" min="0" max="3" step="1" value="0" />
+              <p>Zero uses one shared service frame.</p>
+            </div>
           </div>
 
           <div class="facade-control">
