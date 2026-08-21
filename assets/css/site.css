@@ -213,6 +213,24 @@ a {
   line-height: var(--line-height-lead);
 }
 
+.intro__sketch {
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 32px;
+  padding: 16px 20px;
+  border-left: 3px solid var(--colour-text);
+  background: var(--colour-background-subtle);
+}
+
+.intro__sketch p {
+  margin: 0 0 4px;
+}
+
+.intro__sketch a {
+  font-weight: var(--font-weight-medium);
+  text-underline-offset: 0.25em;
+}
+
 .story-navigation {
   display: flex;
   align-items: baseline;
