@@ -528,6 +528,52 @@ a {
   text-underline-offset: 0.2em;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.greeting-page {
+  background: var(--colour-background);
+}
+
+.greeting-page__main {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: #0b1829;
+}
+
+.greeting-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.greeting-card:focus-visible {
+  outline-color: #f1c879;
+  outline-offset: 6px;
+}
+
+.greeting-card__image {
+  width: auto;
+  height: auto;
+  max-width: min(100%, 42rem);
+  max-height: min(900px, calc(100svh - 48px));
+  object-fit: contain;
+}
+
 @media (max-width: 48rem) {
   .site-header__inner,
   .site-main,
@@ -590,6 +636,14 @@ a {
 
   .site-footer__details {
     text-align: left;
+  }
+
+  .greeting-page__main {
+    padding: 12px;
+  }
+
+  .greeting-card__image {
+    max-height: calc(100svh - 24px);
   }
 }
 

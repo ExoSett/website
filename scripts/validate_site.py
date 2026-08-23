@@ -152,6 +152,14 @@ class SiteValidator:
 
     def __init__(self, root):
         self.root = root.resolve()
+        self.direct_entry_pages = {
+            self.root
+            / "about"
+            / "greetings"
+            / "2026"
+            / "christmas-card"
+            / "index.html"
+        }
         self.redirect_pages = {
             self.root / "components" / "accommodation-cassette" / "index.html": (
                 "https://www.exosett.com/components/accommodation-module/"
@@ -377,7 +385,11 @@ class SiteValidator:
                     pending.append(destination)
 
         for page in self.pages.values():
-            if not page.noindex and page.path not in reachable:
+            if (
+                not page.noindex
+                and page.path not in reachable
+                and page.path not in self.direct_entry_pages
+            ):
                 self.error(page, "indexable page is not reachable from the homepage")
 
     def validate_story(self, page):
