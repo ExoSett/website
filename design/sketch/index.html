@@ -90,14 +90,14 @@
           <div class="dimension-controls">
             <label for="building-layout"><span>Building layout</span></label>
             <select id="building-layout" name="buildingLayout"></select>
-            <label for="cells-wide"><span>Cells wide</span><span class="range">1–20</span></label>
-            <input id="cells-wide" name="cellsWide" type="number" min="1" max="20" step="1" value="5" />
-            <label for="cells-high"><span>Cells high</span><span class="range">1–10</span></label>
+            <label for="cells-high"><span>Height</span><span class="range">1–10</span></label>
             <input id="cells-high" name="cellsHigh" type="number" min="1" max="10" step="1" value="3" />
-            <div id="service-gap-control" class="conditional-control" hidden>
-              <label for="service-gap"><span>Space between facing frames</span><span class="range">0–3 module depths</span></label>
-              <input id="service-gap" name="serviceGap" type="number" min="0" max="3" step="1" value="0" />
-              <p>At zero, the two accommodation frames share one service frame.</p>
+            <label for="cells-wide"><span>Width</span><span class="range">1–20</span></label>
+            <input id="cells-wide" name="cellsWide" type="number" min="1" max="20" step="1" value="5" />
+            <div id="depth-control" class="conditional-control" hidden>
+              <label for="depth"><span>Depth</span><span id="depth-range" class="range">0–5</span></label>
+              <input id="depth" name="depth" type="number" min="0" max="5" step="1" value="0" />
+              <p id="depth-help">At zero, the two accommodation frames share one service frame.</p>
             </div>
           </div>
 
@@ -124,6 +124,7 @@
             <button id="save-xml" type="button" class="primary">Save XML</button>
             <button id="load-xml" type="button">Load XML</button>
             <button id="save-png" type="button">Download PNG</button>
+            <button id="copy-link" type="button">Copy link</button>
             <button id="reset-view" type="button">Reset view</button>
             <input id="xml-file" type="file" accept=".xml,application/xml,text/xml" hidden />
           </div>
