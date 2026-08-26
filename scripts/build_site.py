@@ -9,6 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+CLOUDFLARE_WEB_ANALYTICS = """<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fd72b63d8c184f29a57b810f6768059c"}'></script><!-- End Cloudflare Web Analytics -->"""
 
 
 def arguments() -> argparse.Namespace:
@@ -21,6 +22,19 @@ def arguments() -> argparse.Namespace:
 def ignored(_directory: str, names: list[str]) -> set[str]:
     excluded = {".git", ".vscode", "_site", "__pycache__", ".DS_Store"}
     return set(names) & excluded
+
+
+def add_cloudflare_web_analytics(output: Path) -> None:
+    for page in output.rglob("*.html"):
+        html = page.read_text(encoding="utf-8")
+        if CLOUDFLARE_WEB_ANALYTICS in html:
+            raise SystemExit(f"Cloudflare Web Analytics is already present in {page}")
+        if html.count("</body>") != 1:
+            raise SystemExit(f"Expected exactly one closing body tag in {page}")
+        page.write_text(
+            html.replace("</body>", f"{CLOUDFLARE_WEB_ANALYTICS}</body>"),
+            encoding="utf-8",
+        )
 
 
 def main() -> int:
@@ -39,6 +53,7 @@ def main() -> int:
     if output.exists():
         shutil.rmtree(output)
     shutil.copytree(ROOT, output, ignore=ignored)
+    add_cloudflare_web_analytics(output)
 
     assets = output / "design" / "sketch" / "assets"
     assets.mkdir(parents=True, exist_ok=True)
