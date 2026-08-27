@@ -20,9 +20,15 @@ ACCOMMODATION_CASSETTE_REDIRECT = (
     ROOT / "components" / "accommodation-cassette" / "index.html"
 )
 SYSTEM_REDIRECT = ROOT / "system" / "index.html"
+FIRE_SAFETY_ENGINEER_REDIRECT = (
+    ROOT / "design" / "fire-safety-engineer" / "index.html"
+)
 REDIRECTS = {
     ACCOMMODATION_CASSETTE_REDIRECT: ACCOMMODATION_MODULE_URL,
     SYSTEM_REDIRECT: HOME_URL,
+    FIRE_SAFETY_ENGINEER_REDIRECT: (
+        "https://www.exosett.com/design/safety-engineer/"
+    ),
 }
 EXCLUDED_PAGES = (
     ROOT / "components" / "index.html",
@@ -307,7 +313,11 @@ def main() -> int:
         if path != ACCOMMODATION_CASSETTE_REDIRECT
     )
     story_pages = sorted((ROOT / "stories").glob("*/index.html"))
-    design_pages = sorted((ROOT / "design").glob("*/index.html"))
+    design_pages = sorted(
+        path
+        for path in (ROOT / "design").glob("*/index.html")
+        if path not in REDIRECTS
+    )
     about_pages = sorted((ROOT / "about").glob("*/index.html"))
     nested_about_pages = sorted((ROOT / "about").glob("*/*/index.html"))
     for path in component_pages:
