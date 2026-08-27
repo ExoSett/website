@@ -165,9 +165,6 @@ class SiteValidator:
                 "https://www.exosett.com/components/accommodation-module/"
             ),
             self.root / "system" / "index.html": "https://www.exosett.com/",
-            self.root / "design" / "fire-safety-engineer" / "index.html": (
-                "https://www.exosett.com/design/safety-engineer/"
-            ),
         }
         self.pages = {}
         self.errors = []

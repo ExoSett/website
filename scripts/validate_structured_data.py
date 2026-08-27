@@ -20,15 +20,9 @@ ACCOMMODATION_CASSETTE_REDIRECT = (
     ROOT / "components" / "accommodation-cassette" / "index.html"
 )
 SYSTEM_REDIRECT = ROOT / "system" / "index.html"
-FIRE_SAFETY_ENGINEER_REDIRECT = (
-    ROOT / "design" / "fire-safety-engineer" / "index.html"
-)
 REDIRECTS = {
     ACCOMMODATION_CASSETTE_REDIRECT: ACCOMMODATION_MODULE_URL,
     SYSTEM_REDIRECT: HOME_URL,
-    FIRE_SAFETY_ENGINEER_REDIRECT: (
-        "https://www.exosett.com/design/safety-engineer/"
-    ),
 }
 EXCLUDED_PAGES = (
     ROOT / "components" / "index.html",
