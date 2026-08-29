@@ -183,7 +183,24 @@ a {
 }
 
 .intro--home {
+  position: relative;
+  isolation: isolate;
   max-width: none;
+}
+
+.intro--home::before {
+  position: absolute;
+  inset: 160px 0 32px 35%;
+  z-index: 0;
+  background: url("/assets/media/home/accommodation-cell-module-installation.webp")
+    center right / contain no-repeat;
+  content: "";
+  opacity: 0.12;
+}
+
+.intro--home > * {
+  position: relative;
+  z-index: 1;
 }
 
 .intro__eyebrow,
@@ -271,24 +288,6 @@ a {
 
 .intro__prose {
   margin-top: 24px;
-}
-
-.home-system-figure {
-  width: 60%;
-  max-width: 100%;
-  margin: 48px 0 0;
-}
-
-.home-system-image {
-  width: 100%;
-  height: auto;
-}
-
-.home-system-caption {
-  margin-top: 12px;
-  color: var(--colour-muted);
-  font-size: var(--font-size-small);
-  line-height: 1.5;
 }
 
 .component-media {
@@ -617,8 +616,10 @@ a {
     margin-bottom: var(--section-padding-mobile);
   }
 
-  .home-system-figure {
-    width: 100%;
+  .intro--home::before {
+    inset: 220px -16px 24px 12%;
+    background-position: center right;
+    opacity: 0.07;
   }
 
   .feature-grid {
