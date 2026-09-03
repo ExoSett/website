@@ -164,7 +164,6 @@ class SiteValidator:
             self.root / "components" / "accommodation-cassette" / "index.html": (
                 "https://www.exosett.com/components/accommodation-module/"
             ),
-            self.root / "system" / "index.html": "https://www.exosett.com/",
         }
         self.pages = {}
         self.errors = []

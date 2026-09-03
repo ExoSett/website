@@ -19,10 +19,8 @@ ACCOMMODATION_MODULE_URL = (
 ACCOMMODATION_CASSETTE_REDIRECT = (
     ROOT / "components" / "accommodation-cassette" / "index.html"
 )
-SYSTEM_REDIRECT = ROOT / "system" / "index.html"
 REDIRECTS = {
     ACCOMMODATION_CASSETTE_REDIRECT: ACCOMMODATION_MODULE_URL,
-    SYSTEM_REDIRECT: HOME_URL,
 }
 EXCLUDED_PAGES = (
     ROOT / "components" / "index.html",
