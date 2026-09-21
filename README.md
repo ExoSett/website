@@ -32,6 +32,26 @@ python3 scripts/validate.py
 The structured-data checks can still be run independently with
 `python3 scripts/validate_structured_data.py`.
 
+Run HTML conformance checks with W3C's Nu HTML Checker and stylesheet checks
+with W3C's CSS Validation Service:
+
+```sh
+python3 scripts/validate_w3c.py --report /tmp/exosett-w3c.json
+```
+
+This requires Python 3.9+, `curl` and internet access, and submits HTML and CSS
+contents to the public W3C services, with a five-second pause between requests.
+Use `--root _site` to check assembled deployment output, including Sketch CSS.
+The default checks the source tree, excluding `_site` and dependency directories.
+Nu checks inline styles in HTML; external CSS files are submitted separately
+using the CSS3 profile. JavaScript-generated markup is not checked.
+The JSON report retains errors, warnings and informational notices with locations.
+Exit codes are 0 for no errors, 1 for conformance errors and 2 for service failures.
+Review modern CSS and vendor-extension diagnostics before changing styles.
+These network-dependent checks run separately from `scripts/validate.py`.
+If a service fails or rate-limits a run, wait before retrying with `--resume`
+and the same report path. Resume assumes the site files have not changed.
+
 ## ExoSett Sketch
 
 The public Sketch page is `/design/sketch/`. Its page shell belongs to this repository, while its browser application is built from the sibling `ExoSett/modelling` repository.

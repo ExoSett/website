@@ -29,6 +29,7 @@ GENERATED_REFERENCES = {
     "/design/sketch/assets/sketch.css",
     "/design/sketch/assets/sketch.js",
 }
+VOID_ELEMENTS = set("area base br col embed hr img input link meta param source track wbr".split())
 
 
 class Page(HTMLParser):
@@ -38,6 +39,7 @@ class Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.path = path.resolve()
         self.ids = []
+        self.self_closing_void_elements = []
         self.images = []
         self.references = []
         self.tag_counts = Counter()
@@ -103,6 +105,8 @@ class Page(HTMLParser):
             self._script_parts = []
 
     def handle_startendtag(self, tag, attrs):
+        if tag in VOID_ELEMENTS:
+            self.self_closing_void_elements.append((tag, self.getpos()[0]))
         self.handle_starttag(tag, attrs)
         if self._note_depth > 1:
             self._note_depth -= 1
@@ -190,6 +194,8 @@ class SiteValidator:
         }
 
     def validate_page(self, page):
+        for tag, line in page.self_closing_void_elements:
+            self.error(page, f"void element <{tag}> must not use a trailing slash", line)
         self.validate_ids(page)
         self.validate_landmarks(page)
         self.validate_canonical(page)
