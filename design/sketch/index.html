@@ -11,11 +11,30 @@
     />
     <link rel="canonical" href="https://www.exosett.com/design/sketch/" />
     <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-        {"@type":"ListItem","position":1,"name":"ExoSett","item":"https://www.exosett.com/"},
-        {"@type":"ListItem","position":2,"name":"Design","item":"https://www.exosett.com/design/"},
-        {"@type":"ListItem","position":3,"name":"Sketch","item":"https://www.exosett.com/design/sketch/"}
-      ]}
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ExoSett",
+            "item": "https://www.exosett.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Design",
+            "item": "https://www.exosett.com/design/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Sketch",
+            "item": "https://www.exosett.com/design/sketch/"
+          }
+        ]
+      }
     </script>
 
     <meta property="og:type" content="website" />
@@ -26,8 +45,14 @@
       content="Shape and explore simple ExoSett buildings made from accommodation frames, service frames and modular cells."
     />
     <meta property="og:url" content="https://www.exosett.com/design/sketch/" />
-    <meta property="og:image" content="https://www.exosett.com/assets/brand/social/exosett-social-card.png" />
-    <meta property="og:image:alt" content="Exoskeletons and exchangeable modules mean buildings can evolve." />
+    <meta
+      property="og:image"
+      content="https://www.exosett.com/assets/brand/social/exosett-social-card.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Exoskeletons and exchangeable modules mean buildings can evolve."
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="ExoSett Sketch — ExoSett" />
@@ -35,8 +60,14 @@
       name="twitter:description"
       content="Shape and explore simple ExoSett buildings made from accommodation frames, service frames and modular cells."
     />
-    <meta name="twitter:image" content="https://www.exosett.com/assets/brand/social/exosett-social-card.png" />
-    <meta name="twitter:image:alt" content="Exoskeletons and exchangeable modules mean buildings can evolve." />
+    <meta
+      name="twitter:image"
+      content="https://www.exosett.com/assets/brand/social/exosett-social-card.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Exoskeletons and exchangeable modules mean buildings can evolve."
+    />
 
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -46,10 +77,22 @@
     <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="stylesheet" href="/design/sketch/assets/sketch.css" />
     <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://plausible.io/js/pa-9HDyBRtGCfdRI8XmL-cAr.js"></script>
+    <script
+      async
+      src="https://plausible.io/js/pa-9HDyBRtGCfdRI8XmL-cAr.js"
+    ></script>
     <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
     </script>
   </head>
 
@@ -59,7 +102,12 @@
     <header class="site-header">
       <div class="site-header__inner">
         <a class="site-logo" href="/" aria-label="ExoSett home">
-          <img src="/assets/brand/web/exosett-logo-horizontal.svg" alt="ExoSett" width="769" height="187" />
+          <img
+            src="/assets/brand/web/exosett-logo-horizontal.svg"
+            alt="ExoSett"
+            width="769"
+            height="187"
+          />
         </a>
 
         <nav class="site-nav" aria-label="Primary navigation">
@@ -76,7 +124,11 @@
         <p class="sketch-eyebrow">ExoSett design</p>
         <h1>Sketch</h1>
         <p>Build simple ExoSett arrangements and explore them in 3D.</p>
-        <p>Each frame pair combines an accommodation frame—the structure that holds the modules—with an associated service frame for utilities and access.</p>
+        <p>
+          Each frame pair combines an accommodation frame—the structure that
+          holds the modules—with an associated service frame for utilities and
+          access.
+        </p>
       </section>
 
       <section class="workspace" aria-label="ExoSett model workspace">
@@ -84,20 +136,56 @@
           <div>
             <p class="control-eyebrow">Building layout</p>
             <h2>Shape a simple building</h2>
-            <p class="intro">Choose a layout, then set the number of accommodation cells in each frame. A cell is a space that can receive a module.</p>
+            <p class="intro">
+              Choose a layout, then set the number of accommodation cells in
+              each frame. A cell is a space that can receive a module.
+            </p>
           </div>
 
           <div class="dimension-controls">
             <label for="building-layout"><span>Building layout</span></label>
             <select id="building-layout" name="buildingLayout"></select>
-            <label for="cells-high"><span>Height</span><span class="range">1–10</span></label>
-            <input id="cells-high" name="cellsHigh" type="number" min="1" max="10" step="1" value="3" />
-            <label for="cells-wide"><span>Width</span><span class="range">1–20</span></label>
-            <input id="cells-wide" name="cellsWide" type="number" min="1" max="20" step="1" value="5" />
+            <label for="cells-high"
+              ><span>Height</span><span class="range">1–10</span></label
+            >
+            <input
+              id="cells-high"
+              name="cellsHigh"
+              type="number"
+              min="1"
+              max="10"
+              step="1"
+              value="3"
+            />
+            <label for="cells-wide"
+              ><span>Width</span><span class="range">1–20</span></label
+            >
+            <input
+              id="cells-wide"
+              name="cellsWide"
+              type="number"
+              min="1"
+              max="20"
+              step="1"
+              value="5"
+            />
             <div id="depth-control" class="conditional-control" hidden>
-              <label for="depth"><span>Depth</span><span id="depth-range" class="range">0–5</span></label>
-              <input id="depth" name="depth" type="number" min="0" max="5" step="1" value="0" />
-              <p id="depth-help">At zero, the two accommodation frames share one service frame.</p>
+              <label for="depth"
+                ><span>Depth</span
+                ><span id="depth-range" class="range">0–5</span></label
+              >
+              <input
+                id="depth"
+                name="depth"
+                type="number"
+                min="0"
+                max="5"
+                step="1"
+                value="0"
+              />
+              <p id="depth-help">
+                At zero, the two accommodation frames share one service frame.
+              </p>
             </div>
           </div>
 
@@ -116,20 +204,36 @@
           </div>
 
           <dl class="model-facts">
-            <div><dt>Reference module size</dt><dd>ISO 1CCC (20-foot High Cube envelope)</dd></div>
-            <div><dt>Frame width × height</dt><dd id="model-size">14.0 × 10.5 m</dd></div>
+            <div>
+              <dt>Reference module size</dt>
+              <dd>ISO 1CCC (20-foot High Cube envelope)</dd>
+            </div>
+            <div>
+              <dt>Frame width × height</dt>
+              <dd id="model-size">14.0 × 10.5 m</dd>
+            </div>
           </dl>
 
           <div class="file-actions">
-            <button id="save-xml" type="button" class="primary">Save XML</button>
+            <button id="save-xml" type="button" class="primary">
+              Save XML
+            </button>
             <button id="load-xml" type="button">Load XML</button>
             <button id="save-png" type="button">Download PNG</button>
             <button id="copy-link" type="button">Copy link</button>
             <button id="reset-view" type="button">Reset view</button>
-            <input id="xml-file" type="file" accept=".xml,application/xml,text/xml" hidden />
+            <input
+              id="xml-file"
+              type="file"
+              accept=".xml,application/xml,text/xml"
+              hidden
+            />
           </div>
 
-          <p class="hint"><span aria-hidden="true">↔</span> Drag to orbit · scroll or pinch to zoom · right-drag to pan</p>
+          <p class="hint">
+            <span aria-hidden="true">↔</span> Drag to orbit · scroll or pinch to
+            zoom · right-drag to pan
+          </p>
           <output id="status" class="status" aria-live="polite"></output>
         </aside>
 
@@ -140,13 +244,15 @@
             <span><i class="swatch service"></i>Service frame</span>
           </div>
           <div id="webgl-error" class="webgl-error" hidden>
-            This browser could not start the 3D view. Please try a current browser with WebGL enabled.
+            This browser could not start the 3D view. Please try a current
+            browser with WebGL enabled.
           </div>
         </section>
       </section>
 
       <p class="sketch-note">
-        Sketch is an abstract visual tool, not an engineering or compliance model.
+        Sketch is an abstract visual tool, not an engineering or compliance
+        model.
         <a href="https://github.com/ExoSett/modelling">Source</a> ·
         <a href="/design/sketch/MPL-2.0.txt">MPL-2.0 licence</a>.
       </p>
@@ -155,11 +261,19 @@
     <footer class="site-footer">
       <div class="site-footer__inner">
         <a class="site-footer__logo" href="/" aria-label="ExoSett home">
-          <img src="/assets/brand/web/exosett-logo-horizontal-white.svg" alt="ExoSett" width="769" height="187" />
+          <img
+            src="/assets/brand/web/exosett-logo-horizontal-white.svg"
+            alt="ExoSett"
+            width="769"
+            height="187"
+          />
         </a>
         <div class="site-footer__details">
           <p>A building system for modular accommodation.</p>
-          <p>© 2026 ExoSett · Patent pending · <a href="mailto:info@exosett.com">info@exosett.com</a></p>
+          <p>
+            © 2026 ExoSett · Patent pending ·
+            <a href="mailto:info@exosett.com">info@exosett.com</a>
+          </p>
         </div>
       </div>
     </footer>
