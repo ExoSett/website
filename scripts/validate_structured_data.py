@@ -264,7 +264,10 @@ def validate_redirect_page(
 
 def main() -> int:
     errors: list[str] = []
-    html_pages = sorted(ROOT.rglob("*.html"))
+    html_pages = sorted(
+        path for path in ROOT.rglob("*.html")
+        if "_site" not in path.relative_to(ROOT).parts
+    )
     parsed_pages = {path: parse_page(path, errors) for path in html_pages}
 
     for path, (parser, _) in parsed_pages.items():

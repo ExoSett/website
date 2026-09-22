@@ -191,6 +191,7 @@ class SiteValidator:
         self.pages = {
             path.resolve(): Page(path)
             for path in sorted(self.root.rglob("*.html"))
+            if "_site" not in path.relative_to(self.root).parts
         }
 
     def validate_page(self, page):

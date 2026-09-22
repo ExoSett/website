@@ -29,6 +29,12 @@ with:
 python3 scripts/validate.py
 ```
 
+Source validation excludes nested `_site/` deployment output. To validate an
+assembled deployment, run `python3 _site/scripts/validate.py` instead; this
+checks `_site/` as the site root, including its generated Sketch assets.
+Regenerate `_site/` using the build steps below before checking deployment
+output. Do not edit generated files directly.
+
 The structured-data checks can still be run independently with
 `python3 scripts/validate_structured_data.py`.
 
