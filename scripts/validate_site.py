@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate links, assets, metadata and page structure for the static site."""
+"""Check ExoSett site conventions; HTML/CSS conformance belongs to vnu."""
 
 import struct
 import sys
@@ -29,7 +29,6 @@ GENERATED_REFERENCES = {
     "/design/sketch/assets/sketch.css",
     "/design/sketch/assets/sketch.js",
 }
-VOID_ELEMENTS = set("area base br col embed hr img input link meta param source track wbr".split())
 
 
 class Page(HTMLParser):
@@ -39,7 +38,6 @@ class Page(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.path = path.resolve()
         self.ids = []
-        self.self_closing_void_elements = []
         self.images = []
         self.references = []
         self.tag_counts = Counter()
@@ -105,8 +103,6 @@ class Page(HTMLParser):
             self._script_parts = []
 
     def handle_startendtag(self, tag, attrs):
-        if tag in VOID_ELEMENTS:
-            self.self_closing_void_elements.append((tag, self.getpos()[0]))
         self.handle_starttag(tag, attrs)
         if self._note_depth > 1:
             self._note_depth -= 1
@@ -195,9 +191,6 @@ class SiteValidator:
         }
 
     def validate_page(self, page):
-        for tag, line in page.self_closing_void_elements:
-            self.error(page, f"void element <{tag}> must not use a trailing slash", line)
-        self.validate_ids(page)
         self.validate_landmarks(page)
         self.validate_canonical(page)
         self.validate_references(page)
@@ -205,15 +198,6 @@ class SiteValidator:
         self.validate_social_metadata(page)
         self.validate_search_metadata(page)
         self.validate_analytics(page)
-
-    def validate_ids(self, page):
-        counts = Counter(element_id for element_id, _ in page.ids)
-        for element_id, count in sorted(counts.items()):
-            if count > 1:
-                self.error(
-                    page,
-                    f"duplicate id {element_id!r} appears {count} times",
-                )
 
     def validate_landmarks(self, page):
         for tag in ("h1", "main"):
@@ -253,9 +237,6 @@ class SiteValidator:
 
     def validate_images(self, page):
         for image, line in page.images:
-            if "alt" not in image:
-                self.error(page, "image is missing alt", line)
-
             width = image.get("width")
             height = image.get("height")
             if bool(width) != bool(height):
@@ -269,7 +250,7 @@ class SiteValidator:
             try:
                 declared = (int(width), int(height))
             except ValueError:
-                self.error(page, "image dimensions must be integers", line)
+                # vnu reports malformed HTML attribute values.
                 continue
 
             actual = raster_dimensions(destination)
@@ -313,12 +294,6 @@ class SiteValidator:
     def validate_search_metadata(self, page):
         if page.noindex:
             return
-
-        title_count = page.tag_counts["title"]
-        if title_count != 1:
-            self.error(page, f"expected exactly one title, found {title_count}")
-        elif not page.title:
-            self.error(page, "title must not be empty")
 
         descriptions = page.metadata_values("description")
         if len(descriptions) != 1:

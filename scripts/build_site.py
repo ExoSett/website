@@ -20,7 +20,7 @@ def arguments() -> argparse.Namespace:
 
 
 def ignored(_directory: str, names: list[str]) -> set[str]:
-    excluded = {".git", ".vscode", "_site", "__pycache__", ".DS_Store"}
+    excluded = {".git", ".vscode", "_site", "__pycache__", ".DS_Store", "node_modules"}
     return set(names) & excluded
 
 

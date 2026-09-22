@@ -17,3 +17,6 @@ __pycache__/
 # Combined deployment output and generated Sketch bundle
 _site/
 design/sketch/assets/
+
+# Website formatting dependencies
+node_modules/

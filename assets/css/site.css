@@ -484,7 +484,11 @@ a {
   padding: 16px;
   background: var(--colour-background);
   color: var(--colour-text);
-  font: 0.875rem/1.55 ui-monospace, SFMono-Regular, Consolas, monospace;
+  font:
+    0.875rem/1.55 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
 }
 
 .prose {

@@ -19,15 +19,43 @@ The site is intentionally simple:
 - CSS
 - Hosted using GitHub Pages
 
-## Validation
+## Required formatting and validation
 
-Run the complete site validation, including internal links, local assets,
-metadata, image dimensions, story illustrations, sitemap coverage and JSON-LD,
-with:
+Before completing or publishing website changes, format all source HTML and CSS,
+run the local checks, and check the site using the installed local `vnu` (W3C Nu checker). A successful
+build or local validation alone is not sufficient. Fix all conformance errors;
+review warnings and notices and record any remaining limitations. A validator execution
+failure or unchecked page must be reported as incomplete, never as a pass.
+
+Install the pinned formatter dependencies with `npm ci`, then run:
 
 ```sh
-python3 scripts/validate.py
+npm run format
+npm run check
 ```
+
+Prettier uses the repository's `@awmottaz/prettier-plugin-void-html` configuration so that
+void HTML elements use `>` rather than `/>`, avoiding W3C trailing-slash notices. VS Code's Prettier format-on-save uses this
+same configuration after `npm ci`. Do not strip slashes manually after formatting
+or disable validation to accommodate a formatter conflict. Generated `_site/`
+and Sketch assets are excluded from source formatting.
+
+After assembling deployment output, run `npm run check:built` from the website
+source directory. This checks source formatting and validates the assembled site.
+Do not edit generated output to fix errors: correct its source and rebuild.
+
+## Validation details
+
+Run all checks with `npm run check`: Prettier formatting, ExoSett-specific
+validation and local `vnu` HTML/CSS conformance. Any failed stage makes the
+command fail.
+
+`python3 scripts/validate.py` runs only the ExoSett-specific checks: internal
+links, assets, image dimensions, metadata consistency, sitemap coverage,
+navigation, story requirements and JSON-LD. Generic HTML checks such as duplicate
+IDs, title validity, image attribute syntax and trailing-slash formatting are
+handled by `vnu` and Prettier. The one-heading/one-main rule remains an ExoSett
+page convention.
 
 Source validation excludes nested `_site/` deployment output. To validate an
 assembled deployment, run `python3 _site/scripts/validate.py` instead; this
@@ -38,25 +66,24 @@ output. Do not edit generated files directly.
 The structured-data checks can still be run independently with
 `python3 scripts/validate_structured_data.py`.
 
-Run HTML conformance checks with W3C's Nu HTML Checker and stylesheet checks
-with W3C's CSS Validation Service:
+W3C validation **must use the locally installed `vnu`**, for both HTML and CSS.
+Do not upload site files to online validation services. The wrapper below invokes
+`vnu --also-check-css --format json --stdout` with an explicit list of local
+HTML and CSS files and saves the results:
 
 ```sh
 python3 scripts/validate_w3c.py --report /tmp/exosett-w3c.json
 ```
 
-This requires Python 3.9+, `curl` and internet access, and submits HTML and CSS
-contents to the public W3C services, with a five-second pause between requests.
+This requires Python 3.9+ and `vnu` on PATH (on this Mac it is installed at
+`/opt/homebrew/bin/vnu`). No network access is needed. A missing or failed local
+validator is an incomplete check; there is no online fallback.
 Use `--root _site` to check assembled deployment output, including Sketch CSS.
 The default checks the source tree, excluding `_site` and dependency directories.
-Nu checks inline styles in HTML; external CSS files are submitted separately
-using the CSS3 profile. JavaScript-generated markup is not checked.
-The JSON report retains errors, warnings and informational notices with locations.
-Exit codes are 0 for no errors, 1 for conformance errors and 2 for service failures.
-Review modern CSS and vendor-extension diagnostics before changing styles.
-These network-dependent checks run separately from `scripts/validate.py`.
-If a service fails or rate-limits a run, wait before retrying with `--resume`
-and the same report path. Resume assumes the site files have not changed.
+Review every error, warning and notice in the JSON report. Fix errors in source,
+reformat and rerun validation after changes. JavaScript-generated markup is not
+covered by this static check. This uses Nu's CSS checking, not the separate
+online W3C CSS Validation Service.
 
 ## ExoSett Sketch
 

@@ -1,0 +1,14 @@
+{
+  "name": "exosett-website",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write \"**/*.{html,css}\"",
+    "format:check": "prettier --check \"**/*.{html,css}\"",
+    "check": "npm run format:check && python3 scripts/validate.py && python3 scripts/validate_w3c.py --report /tmp/exosett-w3c.json",
+    "check:built": "npm run format:check && python3 _site/scripts/validate.py && python3 scripts/validate_w3c.py --root _site --report /tmp/exosett-w3c-built.json"
+  },
+  "devDependencies": {
+    "@awmottaz/prettier-plugin-void-html": "2.3.0",
+    "prettier": "3.9.6"
+  }
+}

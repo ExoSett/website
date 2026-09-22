@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run all ExoSett website validation checks."""
+"""Run ExoSett-specific checks. Use npm run check for the complete validation."""
 
 from __future__ import annotations
 

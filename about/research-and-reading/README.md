@@ -130,7 +130,9 @@ When adding another article, paper or report:
    another page.
 7. Check attribution, dates, external URLs and the distinction between source
    findings and ExoSett interpretation.
-8. Run the complete site validation.
+8. Format source HTML/CSS with `npm run format`, then run `npm run check`.
+   This includes formatting, ExoSett-specific checks and W3C HTML/CSS validation
+   using installed local `vnu` (no uploads). Fix errors before completion.
 
 If a source directory is renamed, update all internal links, canonical and Open
 Graph URLs, JSON-LD breadcrumb URLs, the sitemap entry and the synopsis `Slug`
@@ -147,7 +149,7 @@ site build.
 Run the complete validation from the repository root:
 
 ```sh
-python3 scripts/validate.py
+npm run check
 ```
 
 This checks internal references, local assets, metadata, image dimensions,
