@@ -224,6 +224,7 @@ a {
 }
 
 .intro__summary {
+  font-style: italic;
   max-width: var(--summary-width);
   margin: 32px 0 0;
   font-size: var(--font-size-lead);
