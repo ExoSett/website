@@ -99,164 +99,171 @@
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header">
-      <div class="site-header__inner">
-        <a class="site-logo" href="/" aria-label="ExoSett home">
-          <img
-            src="/assets/brand/web/exosett-logo-horizontal.svg"
-            alt="ExoSett"
-            width="769"
-            height="187"
-          >
-        </a>
-
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="/components/">Components</a>
-          <a href="/design/" aria-current="page">Design</a>
-          <a href="/stories/">Stories</a>
-          <a href="/about/">About</a>
-        </nav>
-      </div>
-    </header>
-
-    <main class="site-main sketch-page" id="main-content">
-      <section class="sketch-intro">
-        <p class="sketch-eyebrow">ExoSett design</p>
-        <h1>Sketch</h1>
-        <p>Build simple ExoSett arrangements and explore them in 3D.</p>
-        <p>
-          Each frame pair combines an accommodation frame—the structure that
-          holds the modules—with an associated service frame for utilities and
-          access.
-        </p>
-      </section>
-
-      <section class="workspace" aria-label="ExoSett model workspace">
-        <aside class="control-panel" aria-label="Model controls">
-          <div>
-            <p class="control-eyebrow">Building layout</p>
-            <h2>Shape a simple building</h2>
-            <p class="intro">
-              Choose a layout, then set the number of accommodation cells in
-              each frame. A cell is a space that can receive a module.
-            </p>
-          </div>
-
-          <div class="dimension-controls">
-            <label for="building-layout"><span>Building layout</span></label>
-            <select id="building-layout" name="buildingLayout"></select>
-            <label for="cells-high"
-              ><span>Height</span><span class="range">1–10</span></label
+    <div class="sketch-shell">
+      <header class="site-header">
+        <div class="site-header__inner">
+          <a class="site-logo" href="/" aria-label="ExoSett home">
+            <img
+              src="/assets/brand/web/exosett-logo-horizontal.svg"
+              alt="ExoSett"
+              width="769"
+              height="187"
             >
-            <input
-              id="cells-high"
-              name="cellsHigh"
-              type="number"
-              min="1"
-              max="10"
-              step="1"
-              value="3"
-            >
-            <label for="cells-wide"
-              ><span>Width</span><span class="range">1–20</span></label
-            >
-            <input
-              id="cells-wide"
-              name="cellsWide"
-              type="number"
-              min="1"
-              max="20"
-              step="1"
-              value="5"
-            >
-            <div id="depth-control" class="conditional-control" hidden>
-              <label for="depth"
-                ><span>Depth</span
-                ><span id="depth-range" class="range">0–5</span></label
+          </a>
+
+          <nav class="site-nav" aria-label="Primary navigation">
+            <a href="/components/">Components</a>
+            <a href="/design/" aria-current="page">Design</a>
+            <a href="/stories/">Stories</a>
+            <a href="/about/">About</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="site-main sketch-page" id="main-content">
+        <section class="sketch-intro" aria-label="Sketch">
+          <h1>Sketch</h1>
+          <a href="#sketch-help">About Sketch &amp; controls</a>
+        </section>
+
+        <section class="workspace" aria-label="ExoSett model workspace">
+          <aside class="control-panel" aria-label="Model controls">
+            <div>
+              <h2>Shape a simple building</h2>
+            </div>
+
+            <div class="dimension-controls">
+              <label for="building-layout"><span>Building layout</span></label>
+              <select id="building-layout" name="buildingLayout"></select>
+              <label for="cells-high"
+                ><span>Height</span><span class="range">1–10</span></label
               >
               <input
-                id="depth"
-                name="depth"
+                id="cells-high"
+                name="cellsHigh"
                 type="number"
-                min="0"
-                max="5"
+                min="1"
+                max="10"
                 step="1"
-                value="0"
+                value="3"
               >
-              <p id="depth-help">
-                At zero, the two accommodation frames share one service frame.
-              </p>
+              <label for="cells-wide"
+                ><span>Width</span><span class="range">1–20</span></label
+              >
+              <input
+                id="cells-wide"
+                name="cellsWide"
+                type="number"
+                min="1"
+                max="20"
+                step="1"
+                value="5"
+              >
+              <div id="depth-control" class="conditional-control" hidden>
+                <label for="depth"
+                  ><span>Depth</span
+                  ><span id="depth-range" class="range">0–5</span></label
+                >
+                <input
+                  id="depth"
+                  name="depth"
+                  type="number"
+                  min="0"
+                  max="5"
+                  step="1"
+                  value="0"
+                >
+                <p id="depth-help">
+                  At zero, the two accommodation frames share one service frame.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="facade-control roof-control">
-            <label for="roof-type">Roof</label>
-            <select id="roof-type" name="roofType"></select>
-            <p id="roof-help">A slight overhang is included.</p>
-          </div>
-
-          <div class="facade-control">
-            <label for="facade-style">Accommodation facades</label>
-            <select id="facade-style" name="facadeStyle">
-              <option value="">None</option>
-            </select>
-            <p>Applies one treatment to every accommodation-frame cell.</p>
-          </div>
-
-          <dl class="model-facts">
-            <div>
-              <dt>Reference module size</dt>
-              <dd>ISO 1CCC (20-foot High Cube envelope)</dd>
+            <div class="facade-control roof-control">
+              <label for="roof-type">Roof</label>
+              <select id="roof-type" name="roofType"></select>
+              <p id="roof-help">A slight overhang is included.</p>
             </div>
-            <div>
-              <dt>Frame width × height</dt>
-              <dd id="model-size">14.0 × 10.5 m</dd>
+
+            <div class="facade-control">
+              <label for="facade-style">Accommodation facades</label>
+              <select id="facade-style" name="facadeStyle">
+                <option value="">None</option>
+              </select>
+              <p>Applies one treatment to every accommodation-frame cell.</p>
             </div>
-          </dl>
 
-          <div class="file-actions">
-            <button id="save-xml" type="button" class="primary">
-              Save XML
-            </button>
-            <button id="load-xml" type="button">Load XML</button>
-            <button id="save-png" type="button">Download PNG</button>
-            <button id="copy-link" type="button">Copy link</button>
-            <button id="reset-view" type="button">Reset view</button>
-            <input
-              id="xml-file"
-              type="file"
-              accept=".xml,application/xml,text/xml"
-              hidden
-            >
-          </div>
+            <dl class="model-facts">
+              <div>
+                <dt>Reference module size</dt>
+                <dd>ISO 1CCC (20-foot High Cube envelope)</dd>
+              </div>
+              <div>
+                <dt>Frame width × height</dt>
+                <dd id="model-size">14.0 × 10.5 m</dd>
+              </div>
+            </dl>
 
-          <p class="hint">
-            <span aria-hidden="true">↔</span> Drag to orbit · scroll or pinch to
-            zoom · right-drag to pan
-          </p>
-          <output id="status" class="status" aria-live="polite"></output>
-        </aside>
+            <div class="file-actions">
+              <button id="save-xml" type="button" class="primary">
+                Save XML
+              </button>
+              <button id="load-xml" type="button">Load XML</button>
+              <button id="save-png" type="button">Download PNG</button>
+              <button id="copy-link" type="button">Copy link</button>
+              <button id="reset-view" type="button">Reset view</button>
+              <input
+                id="xml-file"
+                type="file"
+                accept=".xml,application/xml,text/xml"
+                hidden
+              >
+            </div>
+            <output id="status" class="status" aria-live="polite"></output>
+          </aside>
 
-        <section class="viewport-wrap" aria-label="Interactive 3D model">
-          <canvas id="viewport"></canvas>
-          <div class="viewport-key" aria-hidden="true">
-            <span><i class="swatch accommodation"></i>Accommodation frame</span>
-            <span><i class="swatch service"></i>Service frame</span>
-          </div>
-          <div id="webgl-error" class="webgl-error" hidden>
-            This browser could not start the 3D view. Please try a current
-            browser with WebGL enabled.
-          </div>
+          <section class="viewport-wrap" aria-label="Interactive 3D model">
+            <canvas id="viewport"></canvas>
+            <div class="viewport-key" aria-hidden="true">
+              <span
+                ><i class="swatch accommodation"></i>Accommodation frame</span
+              >
+              <span><i class="swatch service"></i>Service frame</span>
+            </div>
+            <div id="webgl-error" class="webgl-error" hidden>
+              This browser could not start the 3D view. Please try a current
+              browser with WebGL enabled.
+            </div>
+          </section>
         </section>
-      </section>
 
-      <p class="sketch-note">
-        Sketch is an abstract visual tool, not an engineering or compliance
-        model.
-        <a href="https://github.com/ExoSett/modelling">Source</a> ·
-        <a href="/design/sketch/MPL-2.0.txt">MPL-2.0 licence</a>.
+        <p class="sketch-note">
+          Sketch is an abstract visual tool, not an engineering or compliance
+          model.
+          <a href="https://github.com/ExoSett/modelling">Source</a> ·
+          <a href="/design/sketch/MPL-2.0.txt">MPL-2.0 licence</a>.
+        </p>
+      </main>
+    </div>
+
+    <section
+      class="sketch-help"
+      id="sketch-help"
+      aria-labelledby="sketch-help-title"
+      tabindex="-1"
+    >
+      <h2 id="sketch-help-title">About Sketch</h2>
+      <p>Build simple ExoSett arrangements and explore them in 3D.</p>
+      <p>
+        Each frame pair combines an accommodation frame—the structure that holds
+        the modules—with an associated service frame for utilities and access.
       </p>
-    </main>
+      <p>
+        Drag to orbit · scroll or pinch to zoom · right-drag or use two fingers
+        to pan.
+      </p>
+      <a href="#main-content">Back to Sketch</a>
+    </section>
 
     <footer class="site-footer">
       <div class="site-footer__inner">
