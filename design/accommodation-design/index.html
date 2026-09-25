@@ -94,6 +94,7 @@
           }));
       plausible.init();
     </script>
+    <script src="/assets/js/navigation.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -108,9 +109,108 @@
 
         ></a>
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="/components/">Components</a
-          ><a href="/design/" aria-current="page">Design</a
-          ><a href="/stories/">Stories</a><a href="/about/">About</a>
+          <ul class="site-nav__list">
+            <li class="site-nav__item">
+              <a href="/components/" class="site-nav__section-link"
+                >Components</a
+              >
+              <details class="site-nav__disclosure">
+                <summary aria-controls="nav-components">
+                  <span class="visually-hidden">Components submenu</span
+                  ><span class="site-nav__chevron" aria-hidden="true"></span>
+                </summary>
+                <ul class="site-nav__submenu" id="nav-components">
+                  <li>
+                    <a href="/components/accommodation-module/"
+                      >Accommodation module</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/components/accommodation-frame/"
+                      >Accommodation frame</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/components/service-frame/">Service frame</a>
+                  </li>
+                  <li><a href="/components/cell/">Cell</a></li>
+                  <li><a href="/components/frame-node/">Frame node</a></li>
+                  <li><a href="/components/">All components</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="site-nav__item">
+              <a href="/design/" class="site-nav__section-link is-active"
+                >Design</a
+              >
+              <details class="site-nav__disclosure">
+                <summary aria-controls="nav-design">
+                  <span class="visually-hidden">Design submenu</span
+                  ><span class="site-nav__chevron" aria-hidden="true"></span>
+                </summary>
+                <ul class="site-nav__submenu" id="nav-design">
+                  <li><a href="/design/sketch/">Sketch</a></li>
+                  <li><a href="/design/#roles-heading">Project roles</a></li>
+                  <li>
+                    <a href="/design/accommodation-design/" aria-current="page"
+                      >Accommodation design</a
+                    >
+                  </li>
+                  <li><a href="/design/location/">Location</a></li>
+                  <li><a href="/design/fire-safety/">Fire safety</a></li>
+                  <li><a href="/design/">Design overview</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="site-nav__item">
+              <a href="/stories/" class="site-nav__section-link">Stories</a>
+              <details class="site-nav__disclosure">
+                <summary aria-controls="nav-stories">
+                  <span class="visually-hidden">Stories submenu</span
+                  ><span class="site-nav__chevron" aria-hidden="true"></span>
+                </summary>
+                <ul class="site-nav__submenu" id="nav-stories">
+                  <li>
+                    <a href="/stories/retirement-living/">Retirement living</a>
+                  </li>
+                  <li>
+                    <a href="/stories/event-accommodation/"
+                      >Event accommodation</a
+                    >
+                  </li>
+                  <li><a href="/stories/the-old-prison/">The old prison</a></li>
+                  <li>
+                    <a href="/stories/evolving-hotel/">The evolving hotel</a>
+                  </li>
+                  <li><a href="/stories/">All stories</a></li>
+                </ul>
+              </details>
+            </li>
+            <li class="site-nav__item">
+              <a href="/about/" class="site-nav__section-link">About</a>
+              <details class="site-nav__disclosure">
+                <summary aria-controls="nav-about">
+                  <span class="visually-hidden">About submenu</span
+                  ><span class="site-nav__chevron" aria-hidden="true"></span>
+                </summary>
+                <ul class="site-nav__submenu" id="nav-about">
+                  <li><a href="/about/">Why are we here?</a></li>
+                  <li>
+                    <a href="/about/research-and-reading/"
+                      >Research and Reading</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/about/exosett-and-conventional-modular-construction/"
+                      >ExoSett and conventional modular construction</a
+                    >
+                  </li>
+                  <li><a href="/about/#contact-heading">Discuss ExoSett</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
