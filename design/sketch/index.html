@@ -133,7 +133,7 @@
             </div>
 
             <div class="dimension-controls">
-              <label for="building-layout"><span>Building layout</span></label>
+              <label for="building-layout"><span>Frame pairs</span></label>
               <select id="building-layout" name="buildingLayout"></select>
               <label for="cells-high"
                 ><span>Height</span><span class="range">1–10</span></label
@@ -145,7 +145,7 @@
                 min="1"
                 max="10"
                 step="1"
-                value="3"
+                value="1"
               >
               <label for="cells-wide"
                 ><span>Width</span><span class="range">1–20</span></label
@@ -157,7 +157,7 @@
                 min="1"
                 max="20"
                 step="1"
-                value="5"
+                value="1"
               >
               <div id="depth-control" class="conditional-control" hidden>
                 <label for="depth"
@@ -193,6 +193,12 @@
               <p>Applies one treatment to every accommodation-frame cell.</p>
             </div>
 
+            <div class="facade-control">
+              <label><input id="show-module" type="checkbox" checked> Show example module</label>
+              <button id="move-module" type="button">Withdraw module</button>
+              <p id="module-help">One illustrative 1CCC module; not a placed module in saved XML.</p>
+            </div>
+
             <dl class="model-facts">
               <div>
                 <dt>Reference module size</dt>
@@ -200,7 +206,7 @@
               </div>
               <div>
                 <dt>Frame width × height</dt>
-                <dd id="model-size">14.0 × 10.5 m</dd>
+                <dd id="model-size">2.8 × 3.5 m</dd>
               </div>
             </dl>
 
