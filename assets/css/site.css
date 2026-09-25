@@ -276,7 +276,7 @@ a {
 
 .intro--home::before {
   position: absolute;
-  inset: 160px 0 32px 35%;
+  inset: 136px 0 56px 35%;
   z-index: 0;
   background: url("/assets/media/home/accommodation-cell-module-installation.webp")
     center right / contain no-repeat;
@@ -822,7 +822,7 @@ a {
   }
 
   .intro--home::before {
-    inset: 220px -16px 24px 12%;
+    inset: 148px -16px 96px 12%;
     background-position: center right;
     opacity: 0.1;
   }
