@@ -265,7 +265,7 @@ a {
 
 .intro {
   max-width: var(--text-width);
-  padding: var(--section-padding) 0;
+  padding: 64px 0 var(--section-padding);
 }
 
 .intro--home {
@@ -772,42 +772,47 @@ a {
   }
 
   .site-nav {
+    position: relative;
     width: 100%;
     gap: 12px 20px;
   }
 
   .site-nav .site-nav__list {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 4px 20px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 0;
   }
 
   .site-nav__item {
-    padding-right: 44px;
+    position: static;
+    display: flex;
+    align-items: center;
+    padding-right: 0;
   }
 
-  .site-nav__item:has(.site-nav__disclosure[open]) {
-    grid-column: 1 / -1;
+  .site-nav .site-nav__section-link {
+    font-size: clamp(0.75rem, 3.4vw, 0.95rem);
   }
 
   .site-nav__disclosure > summary {
-    width: 44px;
+    position: static;
+    width: 24px;
   }
 
   .site-nav__submenu {
-    position: static;
-    width: calc(100% + 44px);
-    max-width: none;
-    max-height: none;
-    margin-bottom: 8px;
+    width: min(320px, 100%);
+    z-index: 1;
   }
 
   .sketch-shell .site-nav {
     width: 100%;
   }
 
-  .intro,
+  .intro {
+    padding: 40px 0 var(--section-padding-mobile);
+  }
+
   .site-section {
     padding: var(--section-padding-mobile) 0;
   }
