@@ -27,6 +27,7 @@ MENUS = {
     ],
     "Stories": [
         ("Retirement living", "/stories/retirement-living/"),
+        ("The First-Time Buyer", "/stories/the-first-time-buyer/"),
         ("Event accommodation", "/stories/event-accommodation/"),
         ("The old prison", "/stories/the-old-prison/"),
         ("The evolving hotel", "/stories/evolving-hotel/"),
