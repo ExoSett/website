@@ -8,38 +8,7 @@ from pathlib import Path
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
-MENUS = {
-    "Components": [
-        ("Accommodation module", "/components/accommodation-module/"),
-        ("Accommodation frame", "/components/accommodation-frame/"),
-        ("Service frame", "/components/service-frame/"),
-        ("Cell", "/components/cell/"),
-        ("Frame node", "/components/frame-node/"),
-        ("All components", "/components/"),
-    ],
-    "Design": [
-        ("Sketch", "/design/sketch/"),
-        ("Project roles", "/design/#roles-heading"),
-        ("Accommodation design", "/design/accommodation-design/"),
-        ("Location", "/design/location/"),
-        ("Fire safety", "/design/fire-safety/"),
-        ("Design overview", "/design/"),
-    ],
-    "Stories": [
-        ("Retirement living", "/stories/retirement-living/"),
-        ("The First-Time Buyer", "/stories/the-first-time-buyer/"),
-        ("Event accommodation", "/stories/event-accommodation/"),
-        ("The old prison", "/stories/the-old-prison/"),
-        ("The evolving hotel", "/stories/evolving-hotel/"),
-        ("All stories", "/stories/"),
-    ],
-    "About": [
-        ("Why are we here?", "/about/"),
-        ("Research and Reading", "/about/research-and-reading/"),
-        ("ExoSett and conventional modular construction", "/about/exosett-and-conventional-modular-construction/"),
-        ("Discuss ExoSett", "/about/#contact-heading"),
-    ],
-}
+SECTIONS = ("Components", "Design", "Stories", "About")
 NAV = re.compile(r'<nav class="site-nav".*?</nav>', re.S)
 SCRIPT = '<script src="/assets/js/navigation.js" defer></script>'
 
@@ -68,13 +37,9 @@ def render(url):
         return f'<a href="{href}"{active}{current}>{escape(label)}</a>'
 
     parts = ['<nav class="site-nav" aria-label="Primary navigation"><ul class="site-nav__list">']
-    for title, entries in MENUS.items():
+    for title in SECTIONS:
         slug = title.lower()
-        parts += [f'<li class="site-nav__item">{link(title, f"/{slug}/", True)}',
-                  f'<details class="site-nav__disclosure"><summary aria-controls="nav-{slug}"><span class="visually-hidden">{title} submenu</span><span class="site-nav__chevron" aria-hidden="true"></span></summary>',
-                  f'<ul class="site-nav__submenu" id="nav-{slug}">']
-        parts += [f'<li>{link(label, href)}</li>' for label, href in entries]
-        parts += ['</ul></details></li>']
+        parts.append(f'<li class="site-nav__item">{link(title, f"/{slug}/", True)}</li>')
     return "\n".join(parts + ['</ul></nav>'])
 
 

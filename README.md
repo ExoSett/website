@@ -46,13 +46,14 @@ Do not edit generated output to fix errors: correct its source and rebuild.
 
 ## Validation details
 
-The curated primary navigation is maintained in `scripts/sync_navigation.py`.
-After editing its menu definitions, run `python3 scripts/sync_navigation.py`
-and `npm run format`. The generated navigation stays in the source HTML so
-section links and native submenu disclosures work without JavaScript.
-`npm run check` checks every header against the shared definition, including
-current-page markers. `assets/js/navigation.js` enhances native disclosures
-with desktop hover, Escape dismissal and coordinated opening/closing.
+The curated submenu definitions are maintained in `assets/js/navigation.js`.
+Each page contains only the four top-level section links, which work without
+JavaScript. The shared script adds accessible native submenu disclosures and
+handles hover, keyboard dismissal and closing other menus. Submenu edits require
+no HTML synchronisation. `scripts/sync_navigation.py` maintains the fallback
+section links and their current-page/section markers; after changing those,
+run `python3 scripts/sync_navigation.py` and `npm run format`.
+`python3 scripts/validate.py` checks that the fallback navigation stays in sync.
 
 Run all checks with `npm run check`: Prettier formatting, ExoSett-specific
 validation and local `vnu` HTML/CSS conformance. Any failed stage makes the

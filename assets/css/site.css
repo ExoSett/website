@@ -795,6 +795,19 @@ a {
     font-size: clamp(0.75rem, 3.4vw, 0.95rem);
   }
 
+  .site-nav__disclosure {
+    width: 24px;
+  }
+
+  .site-nav__item::after {
+    content: "";
+    width: 24px;
+  }
+
+  .site-nav__item:has(.site-nav__disclosure)::after {
+    display: none;
+  }
+
   .site-nav__disclosure > summary {
     position: static;
     width: 24px;

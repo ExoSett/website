@@ -1,5 +1,73 @@
-// Native disclosures remain usable when JavaScript is unavailable.
+// Section links remain in the HTML; JavaScript supplies the optional submenus.
+const navigationMenus = {
+  Components: [
+    ["Accommodation module", "/components/accommodation-module/"],
+    ["Accommodation frame", "/components/accommodation-frame/"],
+    ["Service frame", "/components/service-frame/"],
+    ["Cell", "/components/cell/"],
+    ["Frame node", "/components/frame-node/"],
+    ["All components", "/components/"],
+  ],
+  Design: [
+    ["Sketch", "/design/sketch/"],
+    ["Project roles", "/design/#roles-heading"],
+    ["Accommodation design", "/design/accommodation-design/"],
+    ["Location", "/design/location/"],
+    ["Fire safety", "/design/fire-safety/"],
+    ["Design overview", "/design/"],
+  ],
+  Stories: [
+    ["Retirement living", "/stories/retirement-living/"],
+    ["The First-Time Buyer", "/stories/the-first-time-buyer/"],
+    ["Event accommodation", "/stories/event-accommodation/"],
+    ["The old prison", "/stories/the-old-prison/"],
+    ["The evolving hotel", "/stories/evolving-hotel/"],
+    ["All stories", "/stories/"],
+  ],
+  About: [
+    ["Why are we here?", "/about/"],
+    ["Research and Reading", "/about/research-and-reading/"],
+    [
+      "ExoSett and conventional modular construction",
+      "/about/exosett-and-conventional-modular-construction/",
+    ],
+    ["Discuss ExoSett", "/about/#contact-heading"],
+  ],
+};
+
 document.querySelectorAll(".site-nav").forEach((nav) => {
+  nav.querySelectorAll(".site-nav__section-link").forEach((sectionLink) => {
+    const entries = navigationMenus[sectionLink.textContent.trim()];
+    if (!entries) return;
+    const item = sectionLink.closest(".site-nav__item");
+    if (item.querySelector("details")) return;
+    const details = document.createElement("details");
+    details.className = "site-nav__disclosure";
+    const summary = document.createElement("summary");
+    const label = document.createElement("span");
+    label.className = "visually-hidden";
+    label.textContent = `${sectionLink.textContent.trim()} submenu`;
+    const chevron = document.createElement("span");
+    chevron.className = "site-nav__chevron";
+    chevron.setAttribute("aria-hidden", "true");
+    summary.append(label, chevron);
+    const list = document.createElement("ul");
+    list.className = "site-nav__submenu";
+    list.id = `nav-${sectionLink.textContent.trim().toLowerCase()}`;
+    summary.setAttribute("aria-controls", list.id);
+    const currentPath = window.location.pathname.replace(/index\.html$/, "");
+    entries.forEach(([title, href]) => {
+      const entry = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = href;
+      link.textContent = title;
+      if (href === currentPath) link.setAttribute("aria-current", "page");
+      entry.append(link);
+      list.append(entry);
+    });
+    details.append(summary, list);
+    item.append(details);
+  });
   const disclosures = [...nav.querySelectorAll("details")];
   const hover = window.matchMedia(
     "(hover: hover) and (pointer: fine) and (min-width: 48.0625rem)",
