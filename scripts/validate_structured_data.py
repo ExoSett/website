@@ -13,15 +13,6 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 HOME_URL = "https://www.exosett.com/"
-ACCOMMODATION_MODULE_URL = (
-    "https://www.exosett.com/components/accommodation-module/"
-)
-ACCOMMODATION_CASSETTE_REDIRECT = (
-    ROOT / "components" / "accommodation-cassette" / "index.html"
-)
-REDIRECTS = {
-    ACCOMMODATION_CASSETTE_REDIRECT: ACCOMMODATION_MODULE_URL,
-}
 EXCLUDED_PAGES = (
     ROOT / "components" / "index.html",
     ROOT / "design" / "index.html",
@@ -240,28 +231,6 @@ def validate_breadcrumb_page(
         validate_breadcrumb_url(item.get("item"), path, errors)
 
 
-def validate_redirect_page(
-    path: Path,
-    expected_url: str,
-    parser: PageParser,
-    documents: list[Any],
-    errors: list[str],
-) -> None:
-    if parser.canonical != expected_url:
-        errors.append(
-            f"{relative(path)}: redirect canonical must be {expected_url}"
-        )
-    if parser.robots != "noindex, follow":
-        errors.append(f"{relative(path)}: redirect must use noindex, follow")
-    expected_refresh = f"0; url={expected_url}"
-    if parser.refresh != expected_refresh:
-        errors.append(
-            f"{relative(path)}: redirect refresh must be {expected_refresh}"
-        )
-    if documents:
-        errors.append(f"{relative(path)}: redirect must not contain JSON-LD")
-
-
 def main() -> int:
     errors: list[str] = []
     html_pages = sorted(
@@ -271,19 +240,7 @@ def main() -> int:
     parsed_pages = {path: parse_page(path, errors) for path in html_pages}
 
     for path, (parser, _) in parsed_pages.items():
-        if path in REDIRECTS:
-            continue
         validate_canonical_url(parser.canonical, path, errors)
-
-    for path, expected_url in REDIRECTS.items():
-        redirect_parser, redirect_documents = parsed_pages[path]
-        validate_redirect_page(
-            path,
-            expected_url,
-            redirect_parser,
-            redirect_documents,
-            errors,
-        )
 
     home_documents = parsed_pages[ROOT / "index.html"][1]
     websites = [
@@ -305,13 +262,11 @@ def main() -> int:
     component_pages = sorted(
         path
         for path in (ROOT / "components").glob("*/index.html")
-        if path != ACCOMMODATION_CASSETTE_REDIRECT
     )
     story_pages = sorted((ROOT / "stories").glob("*/index.html"))
     design_pages = sorted(
         path
         for path in (ROOT / "design").glob("*/index.html")
-        if path not in REDIRECTS
     )
     about_pages = sorted((ROOT / "about").glob("*/index.html"))
     nested_about_pages = sorted((ROOT / "about").glob("*/*/index.html"))
