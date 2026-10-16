@@ -57,8 +57,9 @@ def main() -> int:
 
     assets = output / "design" / "sketch" / "assets"
     assets.mkdir(parents=True, exist_ok=True)
-    for source in expected:
-        shutil.copy2(source, assets / source.name)
+    # Vite emits shared and lazy-loaded chunks alongside the entry point.
+    # Publish the complete output so every generated import can resolve.
+    shutil.copytree(sketch_dist, assets, dirs_exist_ok=True)
 
     print(f"Combined website assembled at {output}")
     return 0
