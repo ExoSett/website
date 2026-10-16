@@ -131,3 +131,26 @@ alternative when reduced motion is requested.
 ## Copyright
 
 Copyright © 2026 ExoSett. All rights reserved.
+
+## Release gate and incident prevention
+
+Follow [the shared Sketch release procedure](../modelling/docs/releasing-sketch.md).
+CI now runs packaging regression tests and browser smoke tests against the assembled
+static website before uploading the deployment artifact. Pull requests run these
+checks without deploying. Configure branch protection to require the build check;
+that repository setting is separate from this workflow.
+
+For local integration verification after assembly:
+
+```sh
+python3 scripts/test_build_site.py
+npm run check:built
+cd ../modelling/sketch
+npm run test:release
+```
+
+The release artifact includes both repository revision files. CI retains the tested
+site for 30 days and browser failure evidence. To roll back, retrieve the previous
+successful tested-website artifact and publish its contents through the Pages
+workflow without rebuilding it; verify its revision files and run the release
+browser checks against it first. The user already performs production smoke checks.

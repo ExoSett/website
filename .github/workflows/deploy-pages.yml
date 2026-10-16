@@ -1,6 +1,8 @@
 name: Deploy ExoSett website
 
 on:
+  pull_request:
+    branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
@@ -16,7 +18,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: github-pages
+  group: website-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -59,6 +61,9 @@ jobs:
         run: npm run test:e2e
         working-directory: modelling/sketch
 
+      - name: Test site packaging
+        run: python3 website/scripts/test_build_site.py
+
       - name: Assemble combined site
         run: >-
           python3 website/scripts/build_site.py
@@ -69,15 +74,45 @@ jobs:
         run: python3 scripts/validate.py
         working-directory: _site
 
+      - name: Record release revisions
+        run: |
+          git -C website rev-parse HEAD > _site/website-revision.txt
+          git -C modelling rev-parse HEAD > _site/modelling-revision.txt
+
+      - name: Test assembled website
+        run: npm run test:release
+        working-directory: modelling/sketch
+        env:
+          SKETCH_SITE_ROOT: ${{ github.workspace }}/_site
+
+      - name: Preserve browser failure evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-failure-evidence
+          path: |
+            modelling/sketch/playwright-report/
+            modelling/sketch/test-results/
+
+      - name: Retain tested release
+        uses: actions/upload-artifact@v4
+        with:
+          name: tested-website
+          path: _site
+          retention-days: 30
+
       - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v6
 
       - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
