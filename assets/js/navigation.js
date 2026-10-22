@@ -9,6 +9,7 @@ const navigationMenus = {
     ["All components", "/components/"],
   ],
   Design: [
+    ["Reconfigurability", "/design/reconfigurability/"],
     ["Sketch", "/design/sketch/"],
     ["Project roles", "/design/#roles-heading"],
     ["Accommodation design", "/design/accommodation-design/"],
