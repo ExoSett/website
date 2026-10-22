@@ -35,8 +35,8 @@
   <text class="plex" x="8" y="49.4" fill="#111111" font-size="2.45" font-weight="400">exosett.com</text>
   <text class="plex" x="8" y="52.8" fill="#5f5f5f" font-size="2.25" font-weight="400">info@exosett.com</text>
 
-  <!-- Compact adaptation of the social card's frame, installed cassettes and incoming replacement cassette. -->
-  <g aria-label="Frame and cassette diagram">
+  <!-- Compact adaptation of the social card's frame, installed pods and incoming replacement pod. -->
+  <g aria-label="Frame and pod diagram">
     <g fill="none" stroke="#111111" stroke-linecap="round" stroke-width=".72">
       <path d="M54 16H82M54 29H82M54 42H82M54 16V42M63.33 16V42M72.67 16V42M82 16V42"/>
     </g>
