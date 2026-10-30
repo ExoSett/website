@@ -605,6 +605,34 @@ a {
   margin: 32px 0;
 }
 
+/* Compact article layout for the reconfigurability explanation. */
+.reconfigurability-article {
+  padding-bottom: 48px;
+}
+
+.reconfigurability-article .intro {
+  padding-bottom: 0;
+}
+
+.reconfigurability-article .site-section {
+  padding: 32px 0 0;
+  border-top: 0;
+}
+
+.reconfigurability-article .site-section__header {
+  margin-bottom: 12px;
+}
+
+.reconfigurability-article .site-section h2 {
+  font-size: 1.375rem;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.reconfigurability-article .prose p + p {
+  margin-top: 16px;
+}
+
 .comparison-table {
   max-width: 100%;
   overflow-x: auto;

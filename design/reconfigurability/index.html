@@ -129,7 +129,7 @@
         </nav>
       </div>
     </header>
-    <main class="site-main" id="main-content">
+    <main class="site-main reconfigurability-article" id="main-content">
       <section class="intro">
         <p class="intro__eyebrow">ExoSett design</p>
         <h1>ExoSett Reconfigurability</h1>
@@ -138,253 +138,146 @@
         </p>
         <p class="intro__body">
           ExoSett is an architecture for reconfigurable buildings. Independently
-          supported accommodation pods can be installed, withdrawn and replaced
-          without compromising the primary structural support. The architecture
-          is designed to keep neighbouring homes occupied and largely
-          undisturbed during these changes. Interruptions should be the
-          exception.
+          supported accommodation pods can be installed, removed and replaced
+          without compromising the building’s primary structural support. The
+          architecture is designed to allow replacement while neighbouring homes
+          remain occupied.
         </p>
         <p class="intro__body">
-          Physical architecture alone is insufficient. Components made by
-          different manufacturers, potentially decades apart, must conform to
-          compatible interfaces. Three complementary elements connect the
-          architectural principle to dependable interchangeability: the
-          architecture, the digital building specification and the physical jig.
+          Making this practical requires three complementary elements:
+          <strong
+            >the architecture, a digital building specification and a physical
+            jig</strong
+          >. Together, they are intended to make independently manufactured
+          components interchangeable throughout a building’s life.
         </p>
       </section>
       <section class="site-section" aria-labelledby="architecture-heading">
         <div class="site-section__header">
           <h2 id="architecture-heading">
-            1. The architecture: making change possible
+            The architecture: making change possible
           </h2>
         </div>
         <div class="prose">
           <p>
             The
             <a href="/components/accommodation-frame/">accommodation frame</a>
-            provides exoskeletal structural support for the
-            <a href="/components/accommodation-module/">accommodation pods</a>.
-            Each pod is supported independently of its neighbours. The
+            supports each <a href="/components/accommodation-module/">pod</a>
+            independently, while the
             <a href="/components/service-frame/">service frame</a> provides the
-            associated exoskeletal framework for circulation and services.
-            Separating these responsibilities allows accommodation to change
-            while the supporting structure and shared routes remain in place.
+            framework for access and utilities. In conventional stacked modular
+            construction, modules commonly support those above them. ExoSett
+            separates pods from that primary load path, allowing removal without
+            disturbing the structural support of their neighbours.
           </p>
           <p>
-            In conventional stacked modular construction, modules commonly
-            transmit loads from those above. Removing a lower module can
-            therefore affect the support of others. ExoSett separates the
-            accommodation from that primary load path.
-          </p>
-          <p>
-            Independent support must be accompanied by planned insertion and
-            removal routes, suitable handling arrangements and accessible
-            connections. Together, these provisions allow reconfiguration
-            throughout the building’s life. The
-            <a href="/components/">Components pages</a>, including the
-            <a href="/components/frame-node/">Frame node</a>, explain the
-            individual parts and their interfaces.
+            The building must also provide for pod insertion and removal,
+            handling equipment and accessible service connections.
+            Reconfigurability is designed into the building from the outset.
           </p>
         </div>
       </section>
       <section class="site-section" aria-labelledby="specification-heading">
         <div class="site-section__header">
           <h2 id="specification-heading">
-            2. The digital specification: defining what must fit
+            The digital specification: defining what must fit
           </h2>
         </div>
         <div class="prose">
           <p>
-            The building specification provides a common definition of the
-            building’s arrangement and requirements for designers,
-            manufacturers, installers and maintainers. Its XML design document
-            is a machine-readable project record, independent of any particular
-            design application.
-          </p>
-          <p>
-            The existing
+            The existing machine-readable
             <a
               href="https://github.com/ExoSett/modelling/blob/main/docs/format.md"
               >XML building model</a
             >
-            describes frame pairs, their cells, abstract pod types and pod
-            placements, with dimensions and relative positions. It does not yet
-            define the full engineering requirements for manufacture, assembly
-            or operation. The broader building specification must establish or
-            reference component definitions, physical and services interfaces,
-            tolerances, performance requirements and verification procedures.
-            Checking XML against its schema establishes document structure, not
+            records the building’s arrangement. The fuller building
+            specification is intended to define or reference dimensions,
+            connections, tolerances, service interfaces and verification
+            requirements. This engineering specification remains under
+            development; XML schema validation alone does not establish
             engineering conformity.
           </p>
           <p>
-            The <a href="/design/services-designer/">services designer</a> must
-            work with the
-            <a href="/design/building-designer/">building designer</a>,
-            <a href="/design/frame-designer/">frame designer</a> and
-            <a href="/design/module-designer/">pod designer</a> to ensure that
-            services interfaces are defined in the design document. Connections,
-            isolation, access and the procedures for disconnecting and
-            reconnecting a pod are part of making replacement practical while
-            other homes remain in use.
+            The <a href="/design/building-designer/">building designer</a>,
+            <a href="/design/frame-designer/">frame designer</a>,
+            <a href="/design/module-designer/">pod designer</a> and
+            <a href="/design/services-designer/">services designer</a> must
+            coordinate these requirements, including service isolation and
+            reconnection while neighbouring homes remain in use.
           </p>
           <p>
-            Each project’s XML design document should be under version control,
-            such as Git, from the outset. Its revision history records design
-            decisions and subsequent changes. This history is orthogonal to the
-            schema version: the schema defines the document format, while a
-            project revision identifies a particular state of the design. Many
-            design revisions may use the same schema version, and changing
-            schema is a deliberate decision. The modelling documentation
-            explains this
+            The specification should be
             <a
               href="https://github.com/ExoSett/modelling/blob/main/docs/versioning.md"
-              >versioning policy</a
-            >.
-          </p>
-          <p>
-            Retaining the applicable design revisions and referenced definitions
-            supports manufacture of replacement components long after
-            construction. Records must continue to identify the requirements
-            that apply to the building as maintained.
-          </p>
-          <p>
-            Compatibility is specification-specific. Many buildings may share
-            the same pod and interface requirements while differing in other
-            respects, such as their foundations. A possible future schema
-            extension would allow design documents to import common
-            specification parts, sharing the bulk of a specification while
-            retaining building-specific provisions. This is a proposed
-            capability, rather than a feature of the current XML format.
+              >version-controlled</a
+            >
+            and maintained throughout the building’s life, so replacement
+            components can be manufactured against the applicable requirements
+            years or decades later.
           </p>
         </div>
       </section>
       <section class="site-section" aria-labelledby="jig-heading">
         <div class="site-section__header">
-          <h2 id="jig-heading">3. The physical jig: establishing conformity</h2>
+          <h2 id="jig-heading">The physical jig: establishing conformity</h2>
         </div>
         <div class="prose">
           <p>
-            The <a href="/components/module-jig/">physical jig</a> embodies the
-            critical interfaces for a specified design. Its definition belongs
-            in the design document, together with the applicable tolerances. It
-            may embody connection positions, dimensional boundaries, insertion
-            clearances and other essential geometry. The building designer owns
-            the coordinated jig definition.
+            A <a href="/components/module-jig/">physical jig</a> provides a
+            reference for checking critical component dimensions, connections
+            and clearances before installation. Each jig must first be measured
+            against its specification and tolerances. Both accommodation frames
+            and pods can then be checked against the specified interfaces.
           </p>
           <p>
-            A newly manufactured jig must first be verified by measurement
-            against that definition and its tolerances. The verified jig can
-            then assist manufacture and test components against the specified
-            interfaces before they arrive on site. It provides a common physical
-            reference for both pods and accommodation frames.
-          </p>
-          <p>
-            Only pods that conform to the applicable specification and pass the
-            prescribed jig tests may be installed. This requirement applies
-            wherever that specification is used; it does not restrict a
-            conforming pod to a single building.
-          </p>
-          <p>
-            Manufacturers may use different materials, production methods and
-            equipment, provided their components satisfy the relevant
-            requirements. Equivalent jigs can be produced from the same
-            specification and verified by measurement, allowing geographically
-            distributed and competing manufacturers to work against the same
-            interfaces.
-          </p>
-          <p>
-            A successful jig test establishes conformity only for the
-            requirements that test covers. It does not replace structural
-            calculations, fire testing, material certification or other
-            necessary verification.
+            Different manufacturers can use their own materials and
+            manufacturing methods, provided their components meet the applicable
+            requirements. Jig testing establishes conformity only for the
+            requirements it covers; it complements structural, fire and other
+            safety verification.
           </p>
         </div>
       </section>
       <section class="site-section" aria-labelledby="life-heading">
         <div class="site-section__header">
           <h2 id="life-heading">
-            4. Reconfigurability throughout the building’s life
+            Reconfigurability throughout the building’s life
           </h2>
         </div>
         <div class="prose">
           <p>
-            The architecture provides independent support and routes for change.
-            The specification records what components must satisfy. The verified
-            jig gives manufacturers and installers a practical means of checking
-            the critical physical interfaces. Together, they support independent
-            manufacture and reliable assembly, followed by maintenance,
-            replacement and reconfiguration as requirements change.
+            Pods can be replaced, refurbished, repurposed or relocated to
+            buildings with compatible specifications as requirements change.
+            This allows buildings to evolve without wholesale demolition or
+            rebuilding.
           </p>
           <p>
-            A withdrawn pod can be refurbished for further use. Reuse in another
-            building depends on conformity to that building’s applicable
-            requirements, including the relevant jig tests. Maintaining
-            specifications and conformity records allows this decision to be
-            made from evidence.
-          </p>
-          <p>
-            Long-term evolution must preserve the relevant structural, safety
-            and operational requirements. A revised arrangement, replacement pod
-            or changed service connection must be assessed against those
-            requirements, with the design record updated accordingly. Planning
-            isolation, access and handling is essential to keeping neighbouring
-            homes largely undisturbed.
+            Every change must preserve the applicable structural, safety and
+            operational requirements, with the design record updated
+            accordingly. The specification and conformity records provide
+            evidence for assessing whether components remain suitable for use.
           </p>
         </div>
       </section>
       <section class="site-section" aria-labelledby="participation-heading">
         <div class="site-section__header">
           <h2 id="participation-heading">
-            5. An architecture for independent participation
+            An architecture for independent participation
           </h2>
         </div>
         <div class="prose">
           <p>
-            ExoSett aims to allow multiple independent manufacturers to compete
-            to supply conforming components. Rather than making future change
-            depend on one manufacturer’s product range, designers should be able
-            to specify what is required without unnecessarily prescribing how
-            every component is made.
+            ExoSett aims to support a competitive manufacturing ecosystem in
+            which independent suppliers can produce compatible components to
+            common specifications. This would reduce building owners’ dependence
+            on a single manufacturer’s continuing existence or product range.
           </p>
           <p>
-            This independence supports competition, resilience of supply and
-            long-term availability of replacements. It depends on sufficiently
-            complete specifications, controlled interfaces and credible
-            verification procedures. It does not imply that every ExoSett pod
-            fits every ExoSett building, or that there is one universal ExoSett
-            engineering specification.
-          </p>
-          <p>
-            The XML modelling format already exists. Complete manufacturing
-            interface standards, physical jig definitions and certification
-            procedures are still being developed. Interchangeability across
-            independent manufacturers has not yet been demonstrated. These are
-            the intended means of delivering the architecture’s
-            reconfigurability in a manufactured system. The intended licensing
-            model does not, by itself, settle whether future technical standards
-            will be open or proprietary.
-          </p>
-        </div>
-      </section>
-      <section class="site-section" aria-labelledby="conclusion-heading">
-        <div class="site-section__header">
-          <h2 id="conclusion-heading">
-            Reconfigurability as an engineered property
-          </h2>
-        </div>
-        <div class="prose">
-          <p>
-            <strong
-              >The architecture makes reconfiguration possible. The
-              specification defines it. The jig helps make it
-              dependable.</strong
-            >
-          </p>
-          <p>
-            Reconfigurability is an engineered property of the complete ExoSett
-            system. Structural separation enables change; coordinated
-            specification and verified conformity make that change dependable
-            throughout the building’s life.
+            Compatibility is determined by the applicable specification, not
+            simply by the ExoSett name. The manufacturing interface standards,
+            jig definitions and certification procedures needed to demonstrate
+            interchangeability are still being developed. Interchangeability
+            across independent manufacturers has not yet been demonstrated.
           </p>
         </div>
       </section>
