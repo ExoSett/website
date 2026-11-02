@@ -322,17 +322,6 @@ a {
   margin-top: 20px;
 }
 
-.intro__exchange {
-  margin-top: 24px;
-  font-size: 1.125rem;
-  font-weight: var(--font-weight-medium);
-  line-height: 1.5;
-}
-
-.intro__exchange p {
-  margin: 0;
-}
-
 .intro__sketch {
   width: fit-content;
   max-width: 100%;
