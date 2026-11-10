@@ -269,14 +269,17 @@ a {
 }
 
 .intro--home {
-  position: relative;
-  isolation: isolate;
   max-width: none;
 }
 
-.intro--home::before {
+.intro__overview {
+  position: relative;
+  isolation: isolate;
+}
+
+.intro__overview::before {
   position: absolute;
-  inset: 136px 0 56px 35%;
+  inset: 0 0 0 35%;
   z-index: 0;
   background: url("/assets/media/home/accommodation-cell-module-installation.webp")
     center right / contain no-repeat;
@@ -284,9 +287,17 @@ a {
   opacity: 0.16;
 }
 
-.intro--home > * {
+.intro__overview > * {
   position: relative;
   z-index: 1;
+}
+
+@media (min-width: 72rem) {
+  .intro__overview::before {
+    inset: 24px 0 -112px 55%;
+    transform: scale(1.1);
+    transform-origin: right center;
+  }
 }
 
 .intro__eyebrow,
@@ -322,20 +333,43 @@ a {
   margin-top: 20px;
 }
 
-.intro__sketch {
-  width: fit-content;
-  max-width: 100%;
+.intro__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 660px;
   margin-top: 32px;
-  padding: 16px 20px;
+}
+
+.intro__action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 14px 16px;
+  font-size: var(--font-size-small);
   border-left: 3px solid var(--colour-text);
   background: var(--colour-background-subtle);
 }
 
-.intro__sketch p {
-  margin: 0 0 4px;
+.intro__action-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 10px;
 }
 
-.intro__sketch a {
+.intro__action h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+}
+
+.intro__action p {
+  margin: 0 0 12px;
+}
+
+.intro__action a {
+  margin-top: auto;
   font-weight: var(--font-weight-medium);
   text-underline-offset: 0.25em;
 }
@@ -851,14 +885,19 @@ a {
     margin-bottom: var(--section-padding-mobile);
   }
 
-  .intro--home::before {
-    inset: 148px -16px 96px 12%;
+  .intro__overview::before {
+    inset: 108px -16px 0 12%;
     background-position: center right;
     opacity: 0.1;
   }
 
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .intro__actions {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .qualification {
