@@ -47,8 +47,18 @@ variation on `modular-housing`. Examples include:
 2025-feantsa-modular-housing/
 ```
 
-The year is the source's publication year, not the year in which the page was
-added to ExoSett.
+For a discussion of one external source, the year is the source's publication
+year, not the year in which the page was added to ExoSett. Preserve existing
+source-based names and URLs.
+
+Original ExoSett research articles synthesising multiple sources use their own
+publication year, for example `2026-metabolist-architecture/`. Label these entries
+`ExoSett research article` and show their publication date on the index and page.
+Historical subject dates belong in the description, not the sorting date.
+Original articles may be substantial; use short sections, curated references and
+private research notes in `synopses.md`, clearly distinguishing sources from
+ExoSett's interpretation. The single-source brevity guidance below applies to
+source discussions.
 
 Every source directory contains:
 
