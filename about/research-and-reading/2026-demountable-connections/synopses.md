@@ -31,9 +31,9 @@ The conclusions identify limited long-term practical experience and a need for r
 
 ## Relevance to ExoSett
 
-These are ExoSett interpretations. Module replacement while the supporting frame remains in service makes deliberate disassembly an operational requirement for selected interfaces. This raises questions about repeatable access, wear, tolerances and replacement procedures. Frame-node assemblies could divide functions among specialised parts. Transport and installation fittings could be separate from permanent module restraints; the paper does not establish a preferred ExoSett arrangement. Remaining in service does not mean all nearby spaces remain occupied during removal.
+These are ExoSett interpretations. Pod replacement while the supporting frame remains in service makes deliberate disassembly an operational requirement for selected interfaces. This raises questions about repeatable access, wear, tolerances and replacement procedures. Frame-node assemblies could divide functions among specialised parts. Transport and installation fittings could be separate from permanent pod restraints; the paper does not establish a preferred ExoSett arrangement. Remaining in service does not mean all nearby spaces remain occupied during removal.
 
-The design intention also extends to the primary frame. Temporary installations could be dismantled and frame components assessed for reuse elsewhere. Some frame designs might permit replacement of individual load-bearing beams, columns or node assemblies during service. Module removal and engineered temporary load transfer or relief might be needed before removing a component. These possibilities require engineering development and are not universal or established ExoSett procedures.
+The design intention also extends to the primary frame. Temporary installations could be dismantled and frame components assessed for reuse elsewhere. Some frame designs might permit replacement of individual load-bearing beams, columns or node assemblies during service. Pod removal and engineered temporary load transfer or relief might be needed before removing a component. These possibilities require engineering development and are not universal or established ExoSett procedures.
 
 ## Points reflected on the website
 

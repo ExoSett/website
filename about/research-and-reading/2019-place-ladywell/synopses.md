@@ -55,7 +55,7 @@ The research does not reject modular construction. Instead, it challenges claims
 The following is ExoSett’s interpretation.
 
 - The research supports a distinction between physically changeable buildings and insecure housing: movable components need not imply temporary tenure.
-- It exposes a risk that designing modules for later reuse could lead managers to restrict ordinary occupation and personalisation.
+- It exposes a risk that designing pods for later reuse could lead managers to restrict ordinary occupation and personalisation.
 - ExoSett’s refurbishment concept could absorb normal wear between deployments, but resident rights and control during occupation need explicit treatment.
 - Long-lived frames and services might allow accommodation to change while preserving location and networks; this is a hypothesis, not a result of the report.
 - Architectural identity should respond to place and residents rather than advertise construction method or tenure.

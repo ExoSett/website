@@ -10,8 +10,8 @@
 >
   <title id="title">ExoSett — Buildings that can evolve</title>
   <desc id="description">
-    ExoSett brand card with an accommodation frame and a replaceable module
-    moving into an open cell.
+    ExoSett brand card with an accommodation frame and a replaceable pod
+    moving into an open bay.
   </desc>
 
   <defs>
@@ -77,7 +77,7 @@
     font-weight="400"
   >
     <tspan x="80" dy="0">Modular accommodation frames</tspan>
-    <tspan x="80" dy="34">with replaceable modules</tspan>
+    <tspan x="80" dy="34">with replaceable pods</tspan>
   </text>
 
   <line x1="80" y1="492" x2="520" y2="492" stroke="#b8b8b8" stroke-width="2" />
@@ -148,5 +148,5 @@
     font-size="16"
     font-weight="500"
     letter-spacing="1.1"
-  >FRAME · CELL · MODULE</text>
+  >FRAME · BAY · POD</text>
 </svg>

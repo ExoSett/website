@@ -19,7 +19,7 @@ published: false
 
 The paper is a structured narrative-comparative review, explicitly not a systematic review or meta-analysis. It reports screening 120 records, retaining 60 as the primary evidence base and supplementing these with contextual references. Nine research-stage steel inter-modular connection systems are assessed against eight criteria: structural capacity, seismic response, energy dissipation, fire performance, constructability, sustainability, reusability and cost impact. VectorBloc is a separate commercial benchmark with a different evidentiary basis, including manufacturer information.
 
-The systems comprise friction rocking, shape-memory-alloy bolts, cruciform plug-in, L-shaped brackets with web cut-outs, H-shaped brackets, mid-depth self-locking plug-in, corrugated web moment frame, post-tensioned rod with friction washer, and omnidirectional through-plate corner connections, alongside VectorBloc. These principally join stacked or adjacent structural modules; the review does not evaluate ExoSett module-to-frame interfaces.
+The systems comprise friction rocking, shape-memory-alloy bolts, cruciform plug-in, L-shaped brackets with web cut-outs, H-shaped brackets, mid-depth self-locking plug-in, corrugated web moment frame, post-tensioned rod with friction washer, and omnidirectional through-plate corner connections, alongside VectorBloc. These principally join stacked or adjacent structural modules; the review does not evaluate ExoSett pod-to-frame interfaces.
 
 ## Main arguments and findings
 
@@ -49,12 +49,12 @@ The public page consequently uses a restrained qualitative summary and an eviden
 
 The following is ExoSett interpretation, not a conclusion about ExoSett made by the paper's authors.
 
-Shipping-container corner castings, twist locks and associated accessories remain a reasonable working/reference model: a standard interface supports multiple devices and operational functions. ExoSett has never required those particular fittings. The user confirmed that the patent deliberately permits implementation variation; the patent itself was not independently reviewed here. The website's Frame designer and Module designer pages assign coordination and interface responsibilities rather than prescribing a proprietary connector.
+Shipping-container corner castings, twist locks and associated accessories remain a reasonable working/reference model: a standard interface supports multiple devices and operational functions. ExoSett has never required those particular fittings. The user confirmed that the patent deliberately permits implementation variation; the patent itself was not independently reviewed here. The website's Frame designer and Pod designer pages assign coordination and interface responsibilities rather than prescribing a proprietary connector.
 
-The paper broadens the initial set of connection approaches to investigate and reinforces this existing philosophy. Define compatibility and required behaviour consistently while permitting different designs that satisfy them. The different load paths and structural roles of ExoSett modules and their supporting frame prevent direct transfer of reviewed hardware without development and verification.
+The paper broadens the initial set of connection approaches to investigate and reinforces this existing philosophy. Define compatibility and required behaviour consistently while permitting different designs that satisfy them. The different load paths and structural roles of ExoSett pods and their supporting frame prevent direct transfer of reviewed hardware without development and verification.
 
 Lessons concern installation alignment, final restraint and load transfer, realistic tolerances, accessible release after loading, repeated exchange, replaceable wear parts, possible sacrificial elements, inspection, corrosion and fire performance. Wear parts for ordinary exchanges and sacrificial parts for exceptional loading are distinct design options, neither established here as an ExoSett solution.
 
 ## Points reflected on the website
 
-The source card and general research summary precede the explicitly labelled ExoSett interpretation. The container-interface explanation opens that interpretation, before the structural distinction and practical lessons. All six requested lesson areas are included. The page links the relevant design roles, module/frame descriptions and the existing demountable-connections discussion, and makes no claim of author endorsement.
+The source card and general research summary precede the explicitly labelled ExoSett interpretation. The container-interface explanation opens that interpretation, before the structural distinction and practical lessons. All six requested lesson areas are included. The page links the relevant design roles, pod/frame descriptions and the existing demountable-connections discussion, and makes no claim of author endorsement.

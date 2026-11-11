@@ -54,7 +54,7 @@ The following is ExoSett’s interpretation.
 - Factory quality, repeatable work and skills redistribution support ExoSett’s industrialised premise.
 - Concerns about standardisation and late changes reinforce the value of stable interfaces that permit controlled variation and later replacement.
 - High factory investment and demand risk suggest opportunities for multiple compatible manufacturers, but interoperability itself requires proof and governance.
-- Transport limits and upfront completion affect module dimensions, finance and project sequencing and should be tested in ExoSett studies.
+- Transport limits and upfront completion affect pod dimensions, finance and project sequencing and should be tested in ExoSett studies.
 - The paper warns ExoSett not to convert industry expectations about speed, cost, carbon or maintenance into established performance claims.
 
 ## Points reflected on the website

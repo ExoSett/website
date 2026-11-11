@@ -55,7 +55,7 @@ The following points are ExoSett interpretations.
 - ExoSett may offer another way to create, adapt, refurbish and manage accommodation; it does not by itself make that accommodation affordable, well located or available to people who need it.
 - Future social-housing or homelessness examples should treat a home as a place of privacy, security, autonomy and belonging, not as a unit into which a person is placed.
 - Adaptability should be understood as a property of the building system. It must not make the resident’s home temporary, weaken tenure or legitimise routine relocation.
-- Design and operational research should examine resident control, privacy during maintenance or module replacement, continuity of occupation and the separation of building management from care or tenancy enforcement.
+- Design and operational research should examine resident control, privacy during maintenance or pod replacement, continuity of occupation and the separation of building management from care or tenancy enforcement.
 
 ## Points reflected on the website
 

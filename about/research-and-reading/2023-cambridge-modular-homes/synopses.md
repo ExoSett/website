@@ -53,7 +53,7 @@ The following points are ExoSett interpretations.
 - The study supports treating privacy, autonomy, safety, personalisation and an individual front door as core housing qualities, not secondary benefits of a construction system.
 - It exposes a risk in crediting physical modularity for outcomes produced by residents, support organisations, tenancy arrangements and a good site.
 - Varied housing trajectories support ExoSett’s interest in accommodation that can change, but do not demonstrate that physical reconfiguration improves resident outcomes.
-- ExoSett should investigate how adaptation can occur without undermining tenure or forcing residents to move when sites or modules change.
+- ExoSett should investigate how adaptation can occur without undermining tenure or forcing residents to move when sites or pods change.
 - Resident choice, support provision, domestic control, location and long-term affordability require as much attention as engineering interfaces.
 
 ## Points reflected on the website

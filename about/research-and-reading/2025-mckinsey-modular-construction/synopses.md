@@ -52,9 +52,9 @@ The closing section considers developers, modular manufacturers, contractors and
 
 The following points are ExoSett interpretations. McKinsey has not evaluated, endorsed or commented on ExoSett.
 
-- ExoSett can be understood less as a modular building product than as a building system: a common structural and interface framework within which multiple manufacturers, materials, module types and service providers can participate.
-- This system-level framing fits ExoSett’s intended distinction between a particular accommodation module and the shared accommodation frames, service frames, structural rules and interfaces that can support many modules and buildings.
-- McKinsey’s emphasis on value-chain coordination is relevant to ExoSett’s proposed ecosystem of independent developers, designers, engineers, component and material producers, module manufacturers, contractors, logistics providers and operators.
+- ExoSett can be understood less as a modular building product than as a building system: a common structural and interface framework within which multiple manufacturers, materials, pod types and service providers can participate.
+- This system-level framing fits ExoSett’s intended distinction between a particular accommodation pod and the shared accommodation frames, service frames, structural rules and interfaces that can support many pods and buildings.
+- McKinsey’s emphasis on value-chain coordination is relevant to ExoSett’s proposed ecosystem of independent developers, designers, engineers, component and material producers, pod manufacturers, contractors, logistics providers and operators.
 - Open participation does not eliminate the need for control. ExoSett would require clear interface ownership, assurance, configuration management, responsibilities and feedback from completed projects if independently produced parts are to work together reliably.
 - The history of modular-company failures cautions against treating a factory, module or technical platform as a business model. Demand, procurement routes, partnerships, project performance and disciplined scaling remain necessary.
 - Focused scaling suggests proving the system with bounded applications and participants before expanding across building types, suppliers or geographies.

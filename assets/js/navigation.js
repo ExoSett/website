@@ -1,10 +1,10 @@
 // Section links remain in the HTML; JavaScript supplies the optional submenus.
 const navigationMenus = {
   Components: [
-    ["Accommodation module", "/components/accommodation-module/"],
+    ["Pod", "/components/accommodation-module/"],
     ["Accommodation frame", "/components/accommodation-frame/"],
     ["Service frame", "/components/service-frame/"],
-    ["Cell", "/components/cell/"],
+    ["Bay", "/components/cell/"],
     ["Frame node", "/components/frame-node/"],
     ["All components", "/components/"],
   ],

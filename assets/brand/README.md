@@ -29,9 +29,9 @@ Files in `source/` are the editable Inkscape masters.
 
 ### `exosett-symbol-master.svg`
 
-The master artwork for the ExoSett frame-cell symbol.
+The master artwork for the ExoSett frame-bay symbol.
 
-The symbol represents a square ExoSett frame cell, with four frame nodes and structural members extending towards adjacent cells.
+The symbol represents a square ExoSett frame bay, with four frame nodes and structural members extending towards adjacent bays.
 
 ### `exosett-logo-horizontal-master.svg`
 

@@ -38,9 +38,9 @@
      inkscape:current-layer="svg7"
      showgrid="false" />
   <title
-     id="title">ExoSett frame-cell symbol</title>
+     id="title">ExoSett frame-bay symbol</title>
   <desc
-     id="desc">A monochrome square frame cell with four circular nodes and projecting structural members.</desc>
+     id="desc">A monochrome square frame bay with four circular nodes and projecting structural members.</desc>
   <!-- Transparent background; artwork uses currentColor for easy recolouring. -->
   <path
      id="rect1"
@@ -51,7 +51,7 @@
     <rdf:RDF>
       <cc:Work
          rdf:about="">
-        <dc:title>ExoSett frame-cell symbol</dc:title>
+        <dc:title>ExoSett frame-bay symbol</dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>

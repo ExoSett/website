@@ -28,8 +28,8 @@ Single design case; recovery was not demonstrated. Reversible joints and economi
 
 ## Relevance to ExoSett
 
-ExoSett interpretation: separation of supporting frames, services and accommodation could support module exchange during use. This paper does not validate ExoSett. Operational independence is an additional ExoSett proposal, recording neighbouring accommodation unavailable during exchange, its duration, and separate service interruptions. Detailed procedures and performance remain to be verified.
+ExoSett interpretation: separation of supporting frames, services and accommodation could support pod exchange during use. This paper does not validate ExoSett. Operational independence is an additional ExoSett proposal, recording neighbouring accommodation unavailable during exchange, its duration, and separate service interruptions. Detailed procedures and performance remain to be verified.
 
 ## Points reflected on the website
 
-The public discussion distinguishes the research findings, ExoSett’s design intentions and a proposed adaptability measure. It links the frame and module explanations, design development, Accessible services at the Simple Utilities URL, and Demountable Connections.
+The public discussion distinguishes the research findings, ExoSett’s design intentions and a proposed adaptability measure. It links the frame and pod explanations, design development, Accessible services at the Simple Utilities URL, and Demountable Connections.

@@ -6,7 +6,7 @@
     <title>Building designer role | ExoSett</title>
     <meta
       name="description"
-      content="The Building designer coordinates specialist designs, module interfaces and the building specification for an ExoSett modular building project."
+      content="The Building designer coordinates specialist designs, pod interfaces and the building specification for an ExoSett modular building project."
     >
     <link
       rel="canonical"
@@ -43,7 +43,7 @@
     <meta property="og:site_name" content="ExoSett">
     <meta
       property="og:description"
-      content="The Building designer coordinates specialist designs, module interfaces and the building specification for an ExoSett modular building project."
+      content="The Building designer coordinates specialist designs, pod interfaces and the building specification for an ExoSett modular building project."
     >
     <meta
       property="og:url"
@@ -55,13 +55,13 @@
     >
     <meta
       property="og:image:alt"
-      content="Exoskeletons and exchangeable modules mean buildings can evolve."
+      content="Exoskeletons and exchangeable pods mean buildings can evolve."
     >
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Building designer role | ExoSett">
     <meta
       name="twitter:description"
-      content="The Building designer coordinates specialist designs, module interfaces and the building specification for an ExoSett modular building project."
+      content="The Building designer coordinates specialist designs, pod interfaces and the building specification for an ExoSett modular building project."
     >
     <meta
       name="twitter:image"
@@ -69,7 +69,7 @@
     >
     <meta
       name="twitter:image:alt"
-      content="Exoskeletons and exchangeable modules mean buildings can evolve."
+      content="Exoskeletons and exchangeable pods mean buildings can evolve."
     >
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -231,58 +231,58 @@
           <p>
             The Building designer establishes the high-level shape of the
             building: the number and arrangement of frame pairs and the number
-            of <a href="/components/cell/">accommodation cells</a> in each pair.
+            of <a href="/components/cell/">accommodation bays</a> in each pair.
           </p>
 
-          <h3>Module dimensions, cell dimensions and module jigs</h3>
+          <h3>Pod dimensions, bay dimensions and pod jigs</h3>
           <p>
             The building specification defines the exact
-            <a href="/components/accommodation-module/">accommodation module</a>
-            envelope and the related accommodation-cell dimensions. Cell
+            <a href="/components/accommodation-module/">accommodation pod</a>
+            envelope and the related accommodation-bay dimensions. Bay
             dimensions also allow for the installation mechanism, tolerances,
             fire-safety barriers and other required interfaces.
           </p>
           <p>
-            A building-level module definition can provide the default for all
+            A building-level pod definition can provide the default for all
             frame pairs, while individual frame pairs may override it. The
             specification should not prevent a project from defining a more
             unusual arrangement where properly coordinated.
           </p>
           <p>
-            Every module definition has a corresponding
-            <strong>module jig specification</strong>, owned by the Building
-            designer and recorded in the building specification. The module jig
-            is a two-sided physical interface gauge. One face presents the
-            interface a module encounters in an accommodation cell; the other
-            presents the interface an accommodation frame encounters when a
-            module is installed.
+            Every pod definition has a corresponding
+            <strong>pod jig specification</strong>, owned by the Building
+            designer and recorded in the building specification. The pod jig is
+            a two-sided physical interface gauge. One face presents the
+            interface a pod encounters in an accommodation bay; the other
+            presents the interface an accommodation frame encounters when a pod
+            is installed.
           </p>
           <p>
-            Module designers and manufacturers can use the gauge to prove that a
-            pod fits. Installation frames can lift the jig beneath a module, so
-            a module that does not fit the installation jig will not fit the
+            Pod designers and manufacturers can use the gauge to prove that a
+            pod fits. Installation frames can lift the jig beneath a pod, so a
+            pod that does not fit the installation jig will not fit the
             building. Frame designers, manufacturers and construction crews can
             use the opposite face to verify the accommodation frame. The jig
             definition is therefore a critical contractual input to both the
             <a href="/design/frame-designer/">Frame designer</a> and the
-            <a href="/design/module-designer/">Module designer</a>, and should
-            be fixed before dependent design and manufacture proceed.
+            <a href="/design/module-designer/">Pod designer</a>, and should be
+            fixed before dependent design and manufacture proceed.
           </p>
 
           <h3>Services requirements</h3>
           <p>
             The Building designer defines the services that the building and its
-            modules are expected to receive, together with the standard
-            interfaces through which an installed module connects to them. This
-            becomes common input to the
+            pods are expected to receive, together with the standard interfaces
+            through which an installed pod connects to them. This becomes common
+            input to the
             <a href="/design/services-designer/">Services designer</a>, Frame
-            designer and Module designer.
+            designer and Pod designer.
           </p>
           <p>
             The Services designer and Frame designer coordinate the physical
-            delivery of services through the building. The Module designer uses
-            the same definition to provide the expected connections at the
-            module interface.
+            delivery of services through the building. The Pod designer uses the
+            same definition to provide the expected connections at the pod
+            interface.
           </p>
 
           <h3>Foundation context</h3>
@@ -398,17 +398,17 @@ Ask me to provide the client’s proposal supplied by the Project client represe
 Help me establish the high-level building configuration, including:
 
 * the number and arrangement of frame pairs;
-* the number of accommodation cells in each frame pair;
-* a default module envelope and related cell dimensions at building level where appropriate; and
+* the number of accommodation bays in each frame pair;
+* a default pod envelope and related bay dimensions at building level where appropriate; and
 * any frame-pair-level overrides or unusual arrangements that require explicit coordination.
 
-Keep module envelope and cell dimensions distinct. The module envelope defines the exact external space occupied by a module. Cell dimensions must also account for the installation mechanism, tolerances, fire-safety barriers and other required interfaces.
+Keep pod envelope and bay dimensions distinct. The pod envelope defines the exact external space occupied by a pod. Bay dimensions must also account for the installation mechanism, tolerances, fire-safety barriers and other required interfaces.
 
-For every module definition, help me prepare the corresponding module jig specification. Treat the module jig as a two-sided physical interface gauge owned by the Building designer and specified in the building specification. One face presents the exact interface a module encounters when installed into an accommodation frame. Module designers and manufacturers use it to prove pod fit, and an installation frame may lift a module through the jig. The opposite face presents the exact interface an accommodation frame encounters when a module is installed. Frame designers, frame manufacturers and construction crews can use it to prove that the frame is correct.
+For every pod definition, help me prepare the corresponding pod jig specification. Treat the pod jig as a two-sided physical interface gauge owned by the Building designer and specified in the building specification. One face presents the exact interface a pod encounters when installed into an accommodation frame. Pod designers and manufacturers use it to prove pod fit, and an installation frame may lift a pod through the jig. The opposite face presents the exact interface an accommodation frame encounters when a pod is installed. Frame designers, frame manufacturers and construction crews can use it to prove that the frame is correct.
 
-Identify all information required to define that contractual interface using the current schema and technical sources. Do not invent dimensions, tolerances, datums, attachment details, installation clearances or connection positions. Ask for them or identify the competent designer who must provide them. Make clear that the jig definition is a critical common input to the Frame designer and Module designer and should be signed off before dependent design or manufacture proceeds. If a signed jig definition must be reopened, first explain the likely effects on dependent design, tooling, manufactured work, cost and programme and identify the client decisions that may be required.
+Identify all information required to define that contractual interface using the current schema and technical sources. Do not invent dimensions, tolerances, datums, attachment details, installation clearances or connection positions. Ask for them or identify the competent designer who must provide them. Make clear that the jig definition is a critical common input to the Frame designer and Pod designer and should be signed off before dependent design or manufacture proceeds. If a signed jig definition must be reopened, first explain the likely effects on dependent design, tooling, manufactured work, cost and programme and identify the client decisions that may be required.
 
-Help me define the high-level services requirements for the building and its modules, including the standard interfaces through which an installed module connects to those services. Prepare these as common inputs to the Services designer, Frame designer and Module designer. Explain that the Services designer and Frame designer must coordinate the physical delivery of services through the building, while the Module designer needs the standard service interfaces expected at installation.
+Help me define the high-level services requirements for the building and its pods, including the standard interfaces through which an installed pod connects to those services. Prepare these as common inputs to the Services designer, Frame designer and Pod designer. Explain that the Services designer and Frame designer must coordinate the physical delivery of services through the building, while the Pod designer needs the standard service interfaces expected at installation.
 
 Help me capture the foundation context from the client’s intentions communicated through the Project client representative and the characteristics of the site. Establish whether the building is expected to be freestanding, supported on a podium or use another supporting arrangement. Keep this at the level required to brief the Foundation designer. Leave detailed design of the foundations to that specialist; where a substantial podium or other conventional supporting structure has its own design team, leave the Foundation designer to define and coordinate the ExoSett-to-support interface rather than assigning them the design of the whole supporting building.
 

@@ -55,7 +55,7 @@ The following points are ExoSett interpretations.
 - It exposes risks that ExoSett could be used to create small, isolated, insecure or visibly second-tier accommodation despite good engineering.
 - Separating structure, services, façades and accommodation may help buildings respond to context and improve over time, but cannot guarantee dignity, tenure or integration.
 - ExoSett should develop explicit minimum expectations for space, comfort, services, accessibility, privacy, maintenance, location and resident involvement.
-- Further research should examine governance safeguards, resident control during module replacement, anti-stigma design, and whether long-lived infrastructure actually supports permanent housing rather than prolonged temporary use.
+- Further research should examine governance safeguards, resident control during pod replacement, anti-stigma design, and whether long-lived infrastructure actually supports permanent housing rather than prolonged temporary use.
 
 ## Points reflected on the website
 

@@ -52,10 +52,10 @@ The following points are ExoSett interpretations. The article, its author, publi
 
 - ELA demonstrates that a mature industry already manufactures sophisticated, fully fitted and repeatedly transportable rooms within a standardised envelope.
 - The 6,058 × 2,438 × 2,896 mm Allrounder coincides dimensionally with the ISO 668 1CCC 20-foot High Cube envelope used in current ExoSett engineering examples. ELA’s current product page does not itself use the designation `1CCC`; this is an ExoSett comparison.
-- A shared physical base supporting many fit-outs is relevant to ExoSett’s intention that independently developed accommodation modules can serve different functions.
+- A shared physical base supporting many fit-outs is relevant to ExoSett’s intention that independently developed accommodation pods can serve different functions.
 - ELA illustrates separation of specialist interests: a manufacturer can concentrate on accommodation products while a wider system supplies their operating context.
-- ELA complexes are largely formed by combining and stacking modules with gangway and stairway units. ExoSett instead proposes a persistent accommodation frame and separate service frame into which accommodation modules are inserted.
-- Under the ExoSett proposition, an accommodation module need not itself provide the permanent building structure, circulation or shared service routes.
+- ELA complexes are largely formed by combining and stacking modules with gangway and stairway units. ExoSett instead proposes a persistent accommodation frame and separate service frame into which accommodation pods are inserted.
+- Under the ExoSett proposition, an accommodation pod need not itself provide the permanent building structure, circulation or shared service routes.
 - Manufacturers with capabilities such as ELA’s illustrate relevant established expertise, but no existing ELA product should be described as ExoSett-compatible without design work, testing, certification and agreement with the manufacturer.
 
 ## Points reflected on the website

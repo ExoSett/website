@@ -49,11 +49,11 @@ Its policy recommendations call for more suitable public and private finance, su
 The following points are ExoSett interpretations. The report does not discuss or endorse ExoSett.
 
 - The report supports a useful distinction between modular construction as an initial production method and modularity retained as a building changes through life.
-- Conventional modular buildings or major volumes may sometimes be redeployed. ExoSett instead proposes retaining accommodation and service frames while smaller accommodation modules are installed, removed, replaced or refurbished.
+- Conventional modular buildings or major volumes may sometimes be redeployed. ExoSett instead proposes retaining accommodation and service frames while smaller accommodation pods are installed, removed, replaced or refurbished.
 - Discussion of homelessness, ageing, household composition and adaptable homes provides independent context for potential social-housing, temporary-accommodation and retirement-living applications.
 - The identified barriers remain relevant: ExoSett would still require appropriate finance, approvals, transport planning, manufacturing capacity and public trust.
-- Further work would need to demonstrate lifecycle cost, disruption during module changes, logistics, resident experience and whether adaptation produces genuine affordability or social benefit.
+- Further work would need to demonstrate lifecycle cost, disruption during pod changes, logistics, resident experience and whether adaptation produces genuine affordability or social benefit.
 
 ## Points reflected on the website
 
-The public page summarises the report’s supply argument, factory-production benefits, adoption barriers and discussion of temporary and adaptable housing. It then distinguishes conventional modular production from ExoSett’s proposal for long-lived frames supporting removable accommodation modules, while explicitly identifying that discussion as ExoSett commentary.
+The public page summarises the report’s supply argument, factory-production benefits, adoption barriers and discussion of temporary and adaptable housing. It then distinguishes conventional modular production from ExoSett’s proposal for long-lived frames supporting removable accommodation pods, while explicitly identifying that discussion as ExoSett commentary.
