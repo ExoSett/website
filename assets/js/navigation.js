@@ -28,6 +28,7 @@ const navigationMenus = {
   ],
   About: [
     ["Why are we here?", "/about/"],
+    ["Value Proposition", "/about/value-proposition/"],
     ["Research and Reading", "/about/research-and-reading/"],
     [
       "ExoSett and conventional modular construction",
