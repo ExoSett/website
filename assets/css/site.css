@@ -449,6 +449,45 @@ a {
   font-size: var(--font-size-small);
 }
 
+/* Pod interiors retain their complete views at every screen size. */
+.pod-interiors {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.pod-interiors .component-media {
+  width: 100%;
+  margin: 0;
+}
+
+.pod-interiors .component-media__image {
+  height: clamp(320px, 38vw, 480px);
+  object-fit: contain;
+  background: #e6e6e6;
+}
+
+.pod-interiors__note {
+  margin: 24px 0 0;
+  color: var(--colour-muted);
+  font-size: var(--font-size-small);
+}
+
+.pod-frame {
+  margin: 32px 0 0;
+}
+
+@media (max-width: 48rem) {
+  .pod-interiors {
+    grid-template-columns: 1fr;
+  }
+
+  .pod-interiors .component-media__image {
+    height: auto;
+  }
+}
+
 .story-illustration-note {
   display: block;
   margin-top: 8px;
