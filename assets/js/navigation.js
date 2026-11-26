@@ -10,6 +10,7 @@ const navigationMenus = {
   ],
   Design: [
     ["Reconfigurability", "/design/reconfigurability/"],
+    ["Building classes", "/design/building-classes/"],
     ["Sketch", "/design/sketch/"],
     ["Project roles", "/design/#roles-heading"],
     ["Accommodation design", "/design/accommodation-design/"],

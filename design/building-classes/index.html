@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Building classes and component records — ExoSett</title>
+
+    <meta
+      name="description"
+      content="Understand ExoSett building classes, building instances and component records: reusable design requirements, physical identity and lifecycle information."
+    >
+
+    <link
+      rel="canonical"
+      href="https://www.exosett.com/design/building-classes/"
+    >
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ExoSett",
+            "item": "https://www.exosett.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Design",
+            "item": "https://www.exosett.com/design/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Building classes and component records",
+            "item": "https://www.exosett.com/design/building-classes/"
+          }
+        ]
+      }
+    </script>
+
+    <meta property="og:type" content="website">
+    <meta
+      property="og:title"
+      content="Building classes and component records — ExoSett"
+    >
+    <meta property="og:site_name" content="ExoSett">
+    <meta
+      property="og:description"
+      content="Understand ExoSett building classes, building instances and component records: reusable design requirements, physical identity and lifecycle information."
+    >
+    <meta
+      property="og:url"
+      content="https://www.exosett.com/design/building-classes/"
+    >
+    <meta
+      property="og:image"
+      content="https://www.exosett.com/assets/brand/social/exosett-social-card.png"
+    >
+    <meta
+      property="og:image:alt"
+      content="Exoskeletons and exchangeable pods mean buildings can evolve."
+    >
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta
+      name="twitter:title"
+      content="Building classes and component records — ExoSett"
+    >
+    <meta
+      name="twitter:description"
+      content="Understand ExoSett building classes, building instances and component records: reusable design requirements, physical identity and lifecycle information."
+    >
+    <meta
+      name="twitter:image"
+      content="https://www.exosett.com/assets/brand/social/exosett-social-card.png"
+    >
+    <meta
+      name="twitter:image:alt"
+      content="Exoskeletons and exchangeable pods mean buildings can evolve."
+    >
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/assets/css/site.css">
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script
+      async
+      src="https://plausible.io/js/pa-9HDyBRtGCfdRI8XmL-cAr.js"
+    ></script>
+    <script>
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
+    </script>
+    <script src="/assets/js/navigation.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-logo" href="/" aria-label="ExoSett home">
+          <img
+            src="/assets/brand/web/exosett-logo-horizontal.svg"
+            alt="ExoSett"
+            width="769"
+            height="187"
+          >
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <ul class="site-nav__list">
+            <li class="site-nav__item">
+              <a href="/components/" class="site-nav__section-link"
+                >Components</a
+              >
+            </li>
+            <li class="site-nav__item">
+              <a href="/design/" class="site-nav__section-link is-active"
+                >Design</a
+              >
+            </li>
+            <li class="site-nav__item">
+              <a href="/stories/" class="site-nav__section-link">Stories</a>
+            </li>
+            <li class="site-nav__item">
+              <a href="/about/" class="site-nav__section-link">About</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="site-main" id="main-content">
+      <section class="intro">
+        <p class="intro__eyebrow">ExoSett design</p>
+        <h1>Building classes and component records</h1>
+        <p class="intro__summary">
+          Reconfigurable buildings need both reusable design requirements and
+          reliable records of the buildings and components made to those
+          designs. ExoSett distinguishes a building class from each physical
+          building and each identifiable component.
+        </p>
+        <p class="intro__body">
+          These distinctions support component replacement, maintenance and
+          reuse. They form the basis of ExoSett’s developing information model,
+          whose XML prototype implements a limited part of the wider design
+          intent.
+        </p>
+      </section>
+      <section class="site-section" aria-labelledby="class-heading">
+        <div class="site-section__header">
+          <h2 id="class-heading">Building class: the reusable design basis</h2>
+        </div>
+        <div class="prose">
+          <p>
+            A building class defines the reusable design requirements for
+            buildings and their components. These can include geometry,
+            dimensions, structural arrangements, component classes, design
+            positions, interfaces, services, tolerances and rules. Here,
+            “building class” names an ExoSett design concept, not a regulatory
+            occupancy category.
+          </p>
+          <p>
+            A <strong>Building Class Document</strong> records these definitions
+            or imports them from other class documents. Component classes belong
+            within Building Class Documents. A document can cover a limited
+            subject, such as a beam definition or pod interface, without
+            defining an entire building. Combining such documents does not by
+            itself establish a complete or approved design.
+          </p>
+          <p>
+            For example, a class could define pod dimensions and the interfaces
+            required to fit an accommodation frame. It could also specify
+            requirements for the proposed
+            <a href="/design/fire-safety/#independent-heading"
+              >independent fire-stopping components</a
+            >. Those requirements would still need supporting engineering and
+            evidence.
+          </p>
+        </div>
+      </section>
+      <section class="site-section" aria-labelledby="building-heading">
+        <div class="site-section__header">
+          <h2 id="building-heading">
+            Building instance: one physical building
+          </h2>
+        </div>
+        <div class="prose">
+          <p>
+            A building instance is a particular physical building. Its
+            <strong>Building Instance Document</strong> identifies the class
+            revision adopted as its design basis and records its own
+            configuration: which components occupy its positions, site-specific
+            information, modifications, assessed conformity, deviations and
+            supporting approvals.
+          </p>
+          <p>
+            Several buildings can use the same design definitions while having
+            different components, histories and site conditions. An empty
+            position is different from one whose occupant is unknown; neither
+            should be silently treated as a confirmed installation.
+          </p>
+        </div>
+      </section>
+      <section class="site-section" aria-labelledby="component-heading">
+        <div class="site-section__header">
+          <h2 id="component-heading">
+            Component instance: one identifiable item
+          </h2>
+        </div>
+        <div class="prose">
+          <p>
+            A component instance is an individual physical item, such as a pod
+            or beam. Its <strong>Component Instance Document</strong> identifies
+            the item and its class definition and revision, and records its
+            manufacture, inspection, condition, installation, removal, storage,
+            repair and reuse with supporting evidence.
+          </p>
+          <p>
+            Two components made to the same definition can have different
+            histories and conditions. An item retains its identity when it
+            leaves a building; its record can continue while it is in storage or
+            undergoing repair. Retaining a class reference does not prove
+            continued fitness for use.
+          </p>
+        </div>
+      </section>
+      <section class="site-section" aria-labelledby="replacement-heading">
+        <div class="site-section__header">
+          <h2 id="replacement-heading">
+            Replacing a pod without losing its history
+          </h2>
+        </div>
+        <div class="prose">
+          <p>
+            Consider a pod removed from a bay for refurbishment and replaced by
+            another pod. The installation position in that building retains its
+            identity while its occupant changes. The building record identifies
+            the replacement and the evidence supporting its installation. The
+            removed pod retains its own identity and history, and its component
+            record follows its removal and refurbishment.
+          </p>
+          <p>
+            The building and component records need to agree about the change.
+            Replacing a pod need not change the building class: the
+            replacement’s suitability must be assessed against the adopted
+            design requirements and the particular installation. This
+            distinction supports
+            <a href="/design/reconfigurability/">reconfigurability</a> and the
+            independent lifecycles of pods, frames and other components.
+          </p>
+        </div>
+      </section>
+      <section class="site-section" aria-labelledby="revision-heading">
+        <div class="site-section__header">
+          <h2 id="revision-heading">
+            Design revisions and engineering evidence
+          </h2>
+        </div>
+        <div class="prose">
+          <p>
+            Issued document revisions are immutable: later changes or
+            corrections create new revisions while preserving earlier records. A
+            building adopts a specific class revision. Publishing a new design
+            revision does not automatically change existing buildings or their
+            design basis.
+          </p>
+          <p>
+            Design requirements, recorded physical condition and engineering
+            approval are distinct. A valid XML document, a resolved reference or
+            membership of a class does not establish compliance or suitability.
+            Evidence and approvals must relate to the relevant design revision,
+            physical component, configuration and intended use.
+          </p>
+        </div>
+      </section>
+      <section class="site-section" aria-labelledby="definitions-heading">
+        <div class="site-section__header">
+          <h2 id="definitions-heading">
+            Modelling definitions and XML documentation
+          </h2>
+        </div>
+        <div class="prose">
+          <p>
+            The ExoSett modelling repository on GitHub contains the technical
+            definitions behind this explanation. The links below identify the
+            revision reviewed for this page, so the underlying definitions
+            remain traceable as the project develops.
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://github.com/ExoSett/modelling/blob/f816e9f0cd97e745b03fd8690896148b1968c5bc/docs/information-model.md"
+                >Information-model architecture</a
+              >: the three document concepts, identities, responsibilities and
+              revision rules.
+            </li>
+            <li>
+              <a
+                href="https://github.com/ExoSett/modelling/blob/f816e9f0cd97e745b03fd8690896148b1968c5bc/docs/information-model-examples.md"
+                >Worked examples</a
+              >: replacement, transfer, repair and design changes.
+            </li>
+            <li>
+              <a
+                href="https://github.com/ExoSett/modelling/blob/f816e9f0cd97e745b03fd8690896148b1968c5bc/docs/format-2.0.0.md"
+                >XML 2.0.0 prototype format</a
+              >: the implemented vocabulary, references and validation
+              boundaries.
+            </li>
+            <li>
+              <a
+                href="https://github.com/ExoSett/modelling/blob/f816e9f0cd97e745b03fd8690896148b1968c5bc/docs/prototype-2.0.0-findings.md"
+                >Prototype findings and limitations</a
+              >: what the current implementation exercises and what remains
+              unresolved.
+            </li>
+          </ul>
+          <p>
+            The prototype covers a bounded subset of the architecture, including
+            nominal dimensions, dependencies, positions and illustrative
+            constraints. It is not a released engineering standard or a complete
+            lifecycle management system, and its validators do not assess
+            engineering safety.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <a class="site-footer__logo" href="/" aria-label="ExoSett home">
+          <img
+            src="/assets/brand/web/exosett-logo-horizontal-white.svg"
+            alt="ExoSett"
+            width="769"
+            height="187"
+          >
+        </a>
+
+        <div class="site-footer__details">
+          <p>An architecture for reconfigurable modular buildings.</p>
+
+          <p>
+            © 2026 ExoSett · Patent pending ·
+            <a href="mailto:info@exosett.com">info@exosett.com</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
